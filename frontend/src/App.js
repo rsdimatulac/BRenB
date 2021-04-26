@@ -2,9 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
-import Navigation from "./components/Navigation";
+import Navbar from "./components/Navbar/Navbar";
 import SignupFormPage from "./components/SignupFormPage";
+import HomePage from "./components/HomePage";
 import * as sessionActions from "./store/session";
+import './reset.css';
+import './index.css';
 
 function App() {
   const dispatch = useDispatch();
@@ -16,7 +19,7 @@ function App() {
 
   return (
     <>
-      <Navigation isLoaded={isLoaded} />
+      <Navbar isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
           <Route path="/login">
@@ -27,6 +30,9 @@ function App() {
           </Route>
         </Switch>
       )}
+      <Route exact path="/">
+        <HomePage />
+      </Route>
     </>
   );
 }

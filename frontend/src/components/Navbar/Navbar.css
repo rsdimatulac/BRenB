@@ -1,0 +1,220 @@
+.navbar__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 100;
+  /* width: 100%; */
+  padding: 0px 80px;
+  height: 80px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 4px;
+}
+
+.navbar__logo {
+    object-fit: contain;
+    height: 65px;
+    /* margin-left: 20px; */
+}
+
+.navbar__search {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    /* max-width: fit-content; */
+    max-width: 22%;
+    padding: 10px 8px 10px 10px;
+    height: 25px;
+    border: 1px solid lightgray;
+    border-radius: 999px;
+    margin-left: 120px;
+    box-shadow: 0px 1px 3px 0.2px rgba(0, 0, 0, 0.10);
+}
+/* Start your search text */
+.navbar__search-title {
+    /* border: none; */
+    padding: 0px 10px;
+    /* outline-width: 0; */
+    width: 100%;
+}
+
+.navbar__search > input::placeholder {
+    font-size: 16px;
+    color: black;
+}
+
+.navbar__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 30%;
+    /* width: 18vw; */
+    /* margin-right: 60px; */
+}
+
+.navbar__buttons * {
+    padding: 0px 5px;
+}
+
+#menu-avatar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid lightgray;
+    border-radius: 999px;
+    height: 30px;
+    padding: 5px;
+    margin-left: 10px;
+    box-shadow: 0px 1px 3px 0.2px rgba(0, 0, 0, 0.10);
+}
+
+.search-icon {
+    border-radius: 50%;
+    margin-top: 2.5px;
+    padding: 3px 5px;
+    font-size: 20px;
+    /* background-color: #FF385C; */
+    background-color: #FF7779;
+    color: white;
+}
+
+.language-icon {
+    border-radius: 999px;
+    /* height: 30px; */
+    padding: 10px;
+    font-size: 22px;
+}
+
+#menu-icon {
+    font-size: 20px;
+}
+
+#avatar {
+    font-size: 20px;
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+}
+
+.become-a-host {
+    border-radius: 999px;
+    height: 30px;
+    padding: 5px 10px;
+    display: flex;
+}
+
+.become-a-host > p {
+    align-self: center;
+    font-size: 14px;
+}
+
+/* HOVER */
+
+.become-a-host:hover, .language-icon:hover {
+    background-color: rgb(243, 243, 243);
+}
+
+.navbar__search:hover {
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.15);
+    /* box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px; */
+    cursor: pointer;
+}
+
+.search-icon:hover {
+    background-color: #ff585b;
+}
+
+#menu-avatar:hover {
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.15);
+}
+
+/*************DROPDOWN*****************/
+
+.menu__dropdown-container {
+    background-color: white;
+    height: 180px;
+    width: 180px;
+    position: absolute;
+    top: 90px;
+    right: 10px;
+    padding: 20px;
+    border-radius: 20px;
+    /* box-shadow: 2px 1px 3px 0.2px rgba(0, 0, 0, 0.10); */
+}
+
+.dropdown__list li {
+    list-style-type: none;
+    padding: 10px 0px;
+}
+
+.dropdown__list li > p {
+    font-style: italic;
+}
+
+.dropdown__list li > a, .dropdown__list li > p {
+    text-decoration: none;
+    padding-left: 10px;
+    color: black;
+}
+
+/* Everything except Welcome */
+.dropdown__list li+li:hover {
+    background-color: lightgray;
+}
+
+/**************DARK NAVBAR**************/
+
+.navbar__container.dark {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: black;
+  z-index: 100;
+  padding: 0px 80px;
+  height: 80px;
+}
+
+.navbar__search.dark {
+    display: none;
+}
+
+.navbar__buttons.dark * {
+    color: white;
+}
+
+.navbar__info.dark {
+    margin-left: 140px;
+}
+
+.navbar__info.dark span {
+    color: white;
+    padding: 0px 15px;
+}
+
+.navbar__info.dark span:hover {
+    text-decoration: underline white 2px;
+}
+
+#menu-avatar.dark {
+    background-color: white;
+}
+
+#menu-avatar.dark * {
+    color: gray;
+}
+
+.menu__dropdown-container.dark {
+    background-color: black;
+    border: 1px solid lightgray;
+}
+
+.dropdown__list.dark li+li:hover {
+    background-color: rgb(36, 33, 33);
+}
+
+.become-a-host.dark:hover, .language-icon.dark:hover {
+    background-color: rgb(36, 33, 33);
+}
