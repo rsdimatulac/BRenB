@@ -3,11 +3,13 @@ module.exports = (sequelize, DataTypes) => {
   const Booking = sequelize.define('Booking', {
     user_id: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+      references: { model: 'Users' }
     },
     listing_id: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+      references: { model: 'Listings' }
     },
     check_in: {
       type: DataTypes.DATE,

@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Bookings', {
+    return queryInterface.createTable('Reviews', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -18,17 +18,9 @@ module.exports = {
         allowNull: false,
         references: { model: 'Listings' }
       },
-      check_in: {
-        type: Sequelize.DATE,
-        allowNull: false,
-      },
-      check_out: {
-        type: Sequelize.DATE,
-        allowNull: false,
-      },
-      num_guests: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
+      review: {
+        type: Sequelize.TEXT,
+        allowNull: false
       },
       createdAt: {
         allowNull: false,
@@ -43,6 +35,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Bookings');
+    return queryInterface.dropTable('Reviews');
   }
 };
