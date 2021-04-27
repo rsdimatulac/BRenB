@@ -8,11 +8,10 @@
 
 .tile__container {
     display: flex;
-    padding: 20px 80px 0px 80px;
+    padding: 20px 80px 10px 80px;
 }
 
 .tile__title {
     font-size: 32px;
-    padding-left: 90px;
-    padding-top: 40px;
+    padding: 40px 90px 0px 90px;
 }
