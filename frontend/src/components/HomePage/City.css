@@ -1,0 +1,22 @@
+.city__card {
+    margin: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.city__image > img {
+    border-radius: 10px;
+    object-fit: fill;
+    max-width: 64px;
+    max-height: 64px;
+    width: 100%;
+}
+
+.city__info {
+    align-self: center;
+    padding: 0px 20px;
+    line-height: 20px;
+}
+
