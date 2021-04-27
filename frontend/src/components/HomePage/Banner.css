@@ -1,7 +1,6 @@
 
 .banner__container {
-    /* height: 60vh; */
-    max-height: 100vh;
+    max-height: 200vh;
     background-color: black;
     position: relative;
 }
@@ -17,9 +16,6 @@
     vertical-align: bottom;
     height: 90%;
     width: 90%;
-    /* height: 100%;
-    width: 100%; */
-    /* width:  */
 }
 
 .banner__message {

@@ -6,7 +6,6 @@
   top: 0;
   background-color: white;
   z-index: 100;
-  /* width: 100%; */
   padding: 0px 80px;
   height: 80px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 4px;
@@ -15,14 +14,12 @@
 .navbar__logo {
     object-fit: contain;
     height: 65px;
-    /* margin-left: 20px; */
 }
 
 .navbar__search {
     display: flex;
     align-items: center;
     flex: 1;
-    /* max-width: fit-content; */
     max-width: 22%;
     padding: 10px 8px 10px 10px;
     height: 25px;
@@ -33,9 +30,7 @@
 }
 /* Start your search text */
 .navbar__search-title {
-    /* border: none; */
     padding: 0px 10px;
-    /* outline-width: 0; */
     width: 100%;
 }
 
@@ -49,8 +44,6 @@
     align-items: center;
     justify-content: space-between;
     max-width: 30%;
-    /* width: 18vw; */
-    /* margin-right: 60px; */
 }
 
 .navbar__buttons * {
@@ -74,14 +67,12 @@
     margin-top: 2.5px;
     padding: 3px 5px;
     font-size: 20px;
-    /* background-color: #FF385C; */
     background-color: #FF7779;
     color: white;
 }
 
 .language-icon {
     border-radius: 999px;
-    /* height: 30px; */
     padding: 10px;
     font-size: 22px;
 }
@@ -133,18 +124,36 @@
 
 .menu__dropdown-container {
     background-color: white;
-    height: 180px;
-    width: 180px;
+    height: 240px;
+    width: 240px;
     position: absolute;
     top: 90px;
-    right: 10px;
+    right: 80px;
     padding: 20px;
     border-radius: 20px;
-    /* box-shadow: 2px 1px 3px 0.2px rgba(0, 0, 0, 0.10); */
+    box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.10);
+    animation: growDown 300ms ease-in-out forwards;
+    transform-origin: top center;
+}
+
+@keyframes growDown {
+  0% {
+    transform: scaleY(0)
+  }
+  80% {
+    transform: scaleY(1.1)
+  }
+  100% {
+    transform: scaleY(1)
+  }
+}
+
+.dropdown__welcome {
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .dropdown__list li {
-    list-style-type: none;
     padding: 10px 0px;
 }
 
@@ -159,8 +168,13 @@
 }
 
 /* Everything except Welcome */
-.dropdown__list li+li:hover {
+.dropdown__list li+li:hover:not(.dropdown__divider) {
     background-color: lightgray;
+}
+
+.dropdown__divider {
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 20px;
 }
 
 /**************DARK NAVBAR**************/
@@ -208,10 +222,12 @@
 
 .menu__dropdown-container.dark {
     background-color: black;
-    border: 1px solid lightgray;
+    /* border: 1px solid lightgray; */
+    box-shadow: 0px 0px 8px 2px rgb(59, 58, 58);
+
 }
 
-.dropdown__list.dark li+li:hover {
+.dropdown__list.dark li+li:hover:not(.dropdown__divider) {
     background-color: rgb(36, 33, 33);
 }
 
