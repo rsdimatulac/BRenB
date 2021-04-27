@@ -1,4 +1,4 @@
-const express = require('express')
+const express = require('express');
 const asyncHandler = require('express-async-handler');
 const { check } = require('express-validator');
 
@@ -53,7 +53,7 @@ const validateSignup = [
         .isLength({ min: 8, max: 50 })
         .withMessage('Password must be between 8 to 50 characters long.')
         .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/, 'g')
-        .withMessage('Password must contain at least 1 lowercase letter, uppercase letter, number, and special character (i.e. "!@#$%^&*")'),
+        .withMessage('Password must contain at least 1 lowercase letter, 1 uppercase letter, 1 number, and a special character (i.e. "!@#$%^&*")'),
     check('confirmPassword')
         .exists({ checkFalsy: true })
         .withMessage('Please provide a value for Confirm Password.')

@@ -1,10 +1,16 @@
 const router = require('express').Router();
 const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
+const listingsRouter = require('./listings.js');
+const searchRouter = require('./search.js');
 
 router.use('/session', sessionRouter); // /api/session
 
 router.use('/users', usersRouter); // /api/users
+
+router.use('/listings', listingsRouter); // /api/listings
+
+router.use('/search', searchRouter); // /api/search
 
 router.post('/test', function(req,res) {  // /api/test
     res.json({ requestBody: req.body });

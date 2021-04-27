@@ -18,7 +18,7 @@ import Listing4 from "../../images/listings/4-img-1.webp";
 import Banner from './Banner';
 import Tile from "./Tile";
 import City from "./City";
-import "./HomePage.css";
+import "./Home.css";
 
 const HomePage = () => {
   return (
