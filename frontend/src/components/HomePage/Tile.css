@@ -20,10 +20,9 @@
 }
 
 .tile__info {
-    margin-top: -9px;
+    margin-top: -4px;
     border-radius: 10px;
     padding: 20px;
-    padding-top: 20px;
     border: 1;
 }
 
@@ -41,4 +40,5 @@
     font-weight: 300;
     margin-top: 8px;
     margin-bottom: 8px;
+    line-height: 18px;
 }
