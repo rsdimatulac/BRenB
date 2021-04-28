@@ -44,6 +44,9 @@ function App() {
           <Route path="/users/:id">
             <ProfilePage />
           </Route>
+          {/* <Route path="/page-not-found">
+            <h2>Page Not Found (style me)</h2>
+          </Route> */}
           <Route>
             <h2>Page Not Found (style me)</h2>
           </Route>

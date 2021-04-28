@@ -1,4 +1,6 @@
-// import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import EntireHomes from "../../images/homepage/entire-homes.webp";
 import UniqueStays from "../../images/homepage/unique-stays.webp";
 import Outdoor from "../../images/homepage/farms-and-nature.webp";
@@ -11,16 +13,24 @@ import Victoria from "../../images/homepage/explore-5.webp";
 import Tacoma from "../../images/homepage/explore-6.webp";
 import Vancouver from "../../images/homepage/explore-7.webp";
 import Orcas from "../../images/homepage/explore-3.webp";
-import Listing1 from "../../images/listings/2-img-1.webp";
-import Listing2 from "../../images/listings/1-img-1.webp";
-import Listing3 from "../../images/listings/3-img-0.webp";
-import Listing4 from "../../images/listings/4-img-1.webp";
+import { getListings } from "../../store/listing";
 import Banner from './Banner';
 import Tile from "./Tile";
 import City from "./City";
 import "./Home.css";
 
 const HomePage = () => {
+  const listings = useSelector(state => state.listing);
+  const dispatch = useDispatch();
+  const image1 = listings[0]?.Images[0].url;
+  const image2 = listings[1]?.Images[0].url;
+  const image3 = listings[2]?.Images[0].url;
+  const image4 = listings[3]?.Images[0].url;
+
+  useEffect(() => {
+    dispatch(getListings());
+  }, [dispatch]);
+
   return (
     <>
       <Banner />
@@ -88,32 +98,38 @@ const HomePage = () => {
       </div>
       <h1 className="tile__title">Featured Homes</h1>
       <div className='tile__container'>
-        {/* <NavLink to=""> */}
-        <Tile
-          src={Listing1}
-          title="Spa Retreat with Finnish Spa and Saltwater Hot Tub"
-          description="Indulge in a genuine Finnish sauna and shower outdoors surrounded by bamboo in this luxurious spa retreat just 15 minutes from downtown Seattle."
-          price="$199 / night"
-        />
-        {/* </NavLink> */}
-        <Tile
-          src={Listing2}
-          title="Sky Cabin Apartment with Views"
-          description="A stunning, serene, and cozy apartment in the heart of Seattle, with vaulted ceilings, wood paneling, mid-century decor, and a heated bathroom tile floor."
-          price="$117 / night"
-        />
-        <Tile
-          src={Listing4}
-          title="Bright Basement Apartment with Garden Patio"
-          description="Wake up feeling recharged in this open-plan and cozy apartment ideal for lounging. Experience a private retreat just minutes from the city."
-          price="$107 / night"
-        />
-        <Tile
-          src={Listing3}
-          title="Two-Bedroom Charmer Surrounded by Seattle Faves"
-          description="This home boasts eclectic furnishings and decor, splashes of bright color throughout, contrasting rustic modern finishes, and an exclusive guest patio."
-          price="$180 / night"
-        />
+        <NavLink to={`/listings/${listings[1]?.id}`} style={{ textDecoration: "none"}}>
+          <Tile
+            src={image2}
+            title={listings[1]?.title}
+            description="Indulge in a genuine Finnish sauna and shower outdoors surrounded by bamboo in this luxurious spa retreat just 15 minutes from downtown Seattle."
+            price={`$${listings[1]?.price} / night`}
+          />
+        </NavLink>
+        <NavLink to={`/listings/${listings[0]?.id}`} style={{ textDecoration: "none" }}>
+          <Tile
+            src={image1}
+            title={listings[0]?.title}
+            description="A stunning, serene, and cozy apartment in the heart of Seattle, with vaulted ceilings, wood paneling, mid-century decor, and a heated bathroom tile floor."
+            price={`$${listings[0]?.price} / night`}
+          />
+        </NavLink>
+        <NavLink to={`/listings/${listings[4]?.id}`} style={{ textDecoration: "none" }}>
+          <Tile
+            src={image4}
+            title={listings[3]?.title}
+            description="Wake up feeling recharged in this open-plan and cozy apartment ideal for lounging. Experience a private retreat just minutes from the city."
+            price={`$${listings[3]?.price} / night`}
+          />
+        </NavLink>
+        <NavLink to={`/listings/${listings[2]?.id}`} style={{ textDecoration: "none" }}>
+          <Tile
+            src={image3}
+            title={listings[2]?.title}
+            description="This home boasts eclectic furnishings and decor, splashes of bright color throughout, contrasting rustic modern finishes, and an exclusive guest patio."
+            price={`$${listings[2]?.price} / night`}
+          />
+        </NavLink>
       </div>  
     </>
   )

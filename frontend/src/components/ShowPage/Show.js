@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getListingById } from "../../store/listing";
-import { Route, useParams } from "react-router-dom";
+import { useHistory, Route, useParams, Redirect } from "react-router-dom";
 import { RiStarSFill as Star } from "react-icons/ri";
 import { BiHome as Home } from "react-icons/bi";
 import { HiOutlineSparkles as Sparkle, HiOutlineBookOpen as Rules } from "react-icons/hi";
@@ -13,15 +13,16 @@ import { BiBath as Essential } from "react-icons/bi";
 import { GiForkKnifeSpoon as Kitchen } from "react-icons/gi";
 import { FaRegSnowflake as Aircon } from  "react-icons/fa";
 import { FiMonitor as TV } from "react-icons/fi";
-import { FaFireExtinguisher as FireExt } from "react-icons/fa"
-import Listing1 from "../../images/listings/1-img-1.webp";
+import { FaFireExtinguisher as FireExt } from "react-icons/fa";
 import './Show.css';
 
 const ShowPage = () => {
     const { id } = useParams();
     const listing = useSelector(state => state.listing);
-    // const photoArray = JSON.parse(listing.photoSrc);
     const dispatch = useDispatch();
+    const history = useHistory();
+    
+    const imagesArray = listing?.Images;
     const host = listing?.User;
     const bed = listing?.num_beds;
     const bath = listing?.num_baths;
@@ -30,10 +31,15 @@ const ShowPage = () => {
     useEffect(() => {
         dispatch(getListingById(Number(id)));
     }, [dispatch, id])
+    
+    // redirect to page not found if Listing is NULL
+    if (!listing) {
+        history.push("/")
+        return <Redirect to="page-not-found"/>
+    };
 
     return (
         <div className="show__container">
-            {/* <h2>Show the Listing here</h2> */}
             <Route exact path="/listings/:id">
                 <div className="listing__title-info">
                     <h1>{listing?.title}</h1>
@@ -47,7 +53,7 @@ const ShowPage = () => {
                     </div>
                 </div>
                 <div className="listing__image">
-                    <img src={Listing1} alt="" />
+                    <img src={imagesArray ? imagesArray[0].url : null} alt="" />
                 </div>
                 <div className="listing__features">
                     <div className="description__info">
@@ -108,12 +114,6 @@ const ShowPage = () => {
                 <div className="reviews__container">
                     <h2>Reviews here</h2>
                 </div>
-                {/* {photoArray && (
-                    photoArray.map(photoUrl => (
-                        <img key={photoUrl} src={photoUrl} alt=""/>
-                        // console.log(photoUrl)
-                    ))
-                )} */}
             </Route>
             <Route path="/bookings">
                 {/* TODO: Add Booking Component here */}
