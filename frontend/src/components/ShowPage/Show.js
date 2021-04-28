@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getListingById } from "../../store/listing";
-import { useHistory, Route, useParams, Redirect } from "react-router-dom";
+import { Route, useParams, Redirect } from "react-router-dom";
 import { RiStarSFill as Star } from "react-icons/ri";
 import { BiHome as Home } from "react-icons/bi";
 import { HiOutlineSparkles as Sparkle, HiOutlineBookOpen as Rules } from "react-icons/hi";
@@ -14,13 +13,13 @@ import { GiForkKnifeSpoon as Kitchen } from "react-icons/gi";
 import { FaRegSnowflake as Aircon } from  "react-icons/fa";
 import { FiMonitor as TV } from "react-icons/fi";
 import { FaFireExtinguisher as FireExt } from "react-icons/fa";
+import { getListingById } from "../../store/listing";
 import './Show.css';
 
 const ShowPage = () => {
     const { id } = useParams();
     const listing = useSelector(state => state.listing);
     const dispatch = useDispatch();
-    const history = useHistory();
     
     const imagesArray = listing?.Images;
     const host = listing?.User;
@@ -34,13 +33,12 @@ const ShowPage = () => {
     
     // redirect to page not found if Listing is NULL
     if (!listing) {
-        history.push("/")
-        return <Redirect to="page-not-found"/>
+        return <Redirect to="/page-not-found"/>
     };
 
     return (
         <div className="show__container">
-            <Route exact path="/listings/:id">
+            <Route exact path="/listings/:id(\\d+)">
                 <div className="listing__title-info">
                     <h1>{listing?.title}</h1>
                     <div className="listing__info">

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
-import LoginFormPage from "./components/LoginFormPage";
+import LoginFormPage from "./components/LoginFormPage/LoginForm";
 import Navbar from "./components/Navbar/Navbar";
-import SignupFormPage from "./components/SignupFormPage";
+import SignupFormPage from "./components/SignupFormPage/SignupForm";
 import HomePage from "./components/HomePage/Home";
 import SearchPage from "./components/SearchPage/Search";
 import ShowPage from "./components/ShowPage/Show";
@@ -36,13 +36,13 @@ function App() {
           <Route exact path="/">
             <HomePage />
           </Route>
-          <Route path="/listings/:id">
+          <Route path="/listings/:id(\\d+)">
             <ShowPage />
           </Route>
           <Route path="/search">
             <SearchPage />
           </Route>
-          <Route path="/users/:id">
+          <Route path="/users/:id(\\d+)">
             <ProfilePage />
           </Route>
           <Route>
