@@ -4,13 +4,13 @@ const bcrypt = require('bcryptjs');
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('Users', [
-      {
+      { // 1
         firstName: 'Guest',
         lastName: 'User',
         email: 'guestuser@gmail.com',
         username: 'guestuser',
         hashedPassword: bcrypt.hashSync('Password1!'),
-        avatar: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png",
+        avatar: "https://brenb.s3.amazonaws.com/avatars/user-1.jpg",
         bio: 'I am the guest user. Welcome to Airbnb!'
       },
     ], {});
