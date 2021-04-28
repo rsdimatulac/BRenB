@@ -1,0 +1,76 @@
+.signup__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 464px;
+    width: 528px;
+}
+
+.error__validation {
+    padding-left: 10px;
+    font-style: italic;
+}
+
+.form__container-signup {
+    height: 420px;
+    width: 484px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.form__container-signup > h2 {
+    font-size: 22px;
+}
+
+.fullname__input {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form__container-signup input {
+    box-sizing: border-box;
+    height: 40px;
+    outline-width: 0.5px;
+    outline-color: black;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.438);
+}
+
+input::placeholder {
+    font-size: 18px;
+}
+
+.signup__button {
+    background-color: #FF385C;
+    color: white;
+    height: 44px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+#login__link > button {
+    border: none;
+    background-color: white;
+    font-size: 14px;
+    color: #222222;
+    font-weight: bold;
+}
+
+#login__link > button:hover {
+    text-decoration: underline;
+}
+
+.login__link {
+    font-size: 14px;
+}
