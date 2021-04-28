@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
-import LoginFormPage from "./components/LoginFormPage/LoginForm";
 import Navbar from "./components/Navbar/Navbar";
-import SignupFormPage from "./components/SignupFormPage/SignupForm";
 import HomePage from "./components/HomePage/Home";
 import SearchPage from "./components/SearchPage/Search";
 import ShowPage from "./components/ShowPage/Show";
@@ -27,12 +25,6 @@ function App() {
       <Navbar isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route path="/login">
-            <LoginFormPage />
-          </Route>
-          <Route path="/signup">
-            <SignupFormPage />
-          </Route>
           <Route exact path="/">
             <HomePage />
           </Route>

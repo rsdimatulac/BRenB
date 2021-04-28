@@ -56,10 +56,10 @@ const validateSignup = [
         .withMessage('Password must contain at least 1 lowercase letter, 1 uppercase letter, 1 number, and a special character (i.e. "!@#$%^&*")'),
     check('confirmPassword')
         .exists({ checkFalsy: true })
-        .withMessage('Please provide a value for Confirm Password.')
+        .withMessage('Please provide a value for Confirm password.')
         .custom((value, { req }) => {
             if (value !== req.body.password) {
-                throw new Error('Confirm Password does not match Password.');
+                throw new Error('Confirm password does not match Password.');
             }
             return true;
         }), 
@@ -68,8 +68,8 @@ const validateSignup = [
 
 // Sign up ---> POST /api/users/
 router.post('/', validateSignup, asyncHandler(async (req, res) => {
-    const { email, password, username } = req.body;
-    const user = await User.signup({ email, username, password });
+    const { firstName, lastName, email, password, username } = req.body;
+    const user = await User.signup({ firstName, lastName, email, username, password });
 
     await setTokenCookie(res, user);
 
