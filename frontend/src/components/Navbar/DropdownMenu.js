@@ -41,7 +41,7 @@ const DropdownMenu = ({ dark, isLoaded }) => {
         <div className={`menu__dropdown-container ${dark}`}>
             <ul className={`dropdown__list ${dark}`}>
                 <li className="dropdown__welcome">
-                    {sessionUser ? <p>{`Welcome ${sessionUser.username}!`}</p> : <p>{`Welcome!`}</p>}
+                    {sessionUser ? <p>{`Welcome, ${sessionUser.firstName}!`}</p> : <p>{`Welcome!`}</p>}
                 </li>
                 {isLoaded && sessionLinks}
                 <li className="dropdown__divider">

@@ -26,10 +26,6 @@
     border: 1;
 }
 
-/* .tile__info * {
-    text-decoration: none;
-} */
-
 .tile__info > h2 {
     font-size: 18px;
     font-weight: 600;

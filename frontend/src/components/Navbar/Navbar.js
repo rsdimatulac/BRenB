@@ -7,7 +7,6 @@ import { FiMenu as MenuIcon } from "react-icons/fi";
 import { FaUserCircle as AvatarIcon } from "react-icons/fa";
 import Logo from '../../images/homepage/airbnb-logo.png';
 import LogoBNW from '../../images/homepage/airbnb-logo-bnw.png';
-// import GuestAvatar from "../../images/homepage/avatar.jpg";
 import DatePicker from '../DatePicker/DatePicker';
 import DropdownMenu from "./DropdownMenu";
 import "./Navbar.css"; // styling both NavBar and Dropdown Menu

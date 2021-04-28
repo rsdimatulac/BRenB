@@ -8,7 +8,7 @@
 
 .tile__container {
     display: flex;
-    padding: 20px 80px 10px 80px;
+    padding: 20px 80px 10px 80px; 
 }
 
 .tile__title {

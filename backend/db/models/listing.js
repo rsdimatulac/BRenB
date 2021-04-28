@@ -59,6 +59,7 @@ module.exports = (sequelize, DataTypes) => {
     Listing.belongsTo(models.User, { foreignKey: 'host_id' });
     Listing.hasMany(models.Booking, { foreignKey: 'listing_id' });
     Listing.hasMany(models.Review, { foreignKey: 'listing_id' });
+    Listing.hasMany(models.Image, { foreignKey: 'listing_id' });
   };
   return Listing;
 };
