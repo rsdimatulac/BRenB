@@ -9,6 +9,7 @@ import SearchPage from "./components/SearchPage/Search";
 import ShowPage from "./components/ShowPage/Show";
 import ProfilePage from "./components/ProfilePage";
 import Footer from "./components/Footer/Footer";
+import PageNotFound from "./components/ErrorPage/PageNotFound";
 import * as sessionActions from "./store/session";
 import './reset.css';
 import './index.css';
@@ -44,11 +45,8 @@ function App() {
           <Route path="/users/:id">
             <ProfilePage />
           </Route>
-          {/* <Route path="/page-not-found">
-            <h2>Page Not Found (style me)</h2>
-          </Route> */}
           <Route>
-            <h2>Page Not Found (style me)</h2>
+            <PageNotFound />
           </Route>
         </Switch>
       )}
