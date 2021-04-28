@@ -20,7 +20,7 @@ const ShowPage = () => {
     const { id } = useParams();
     const listing = useSelector(state => state.listing);
     const dispatch = useDispatch();
-    
+
     const imagesArray = listing?.Images;
     const host = listing?.User;
     const bed = listing?.num_beds;
@@ -38,7 +38,7 @@ const ShowPage = () => {
 
     return (
         <div className="show__container">
-            <Route exact path="/listings/:id(\\d+)">
+            <Route exact path="/listings/:id">
                 <div className="listing__title-info">
                     <h1>{listing?.title}</h1>
                     <div className="listing__info">
