@@ -11,6 +11,16 @@ const load = listing => ({
 
 //////////////// THUNK ACTION CREATORS ////////////////////
 
+export const getListings = () => async (dispatch) => {
+    const response = await csrfFetch(`/api/search`);
+    
+    if (response.ok) {
+        const listing = await response.json();
+        dispatch(load(listing));
+        return listing;
+    };
+}
+
 export const getListingById = (id) => async (dispatch) => {
     const response = await csrfFetch(`/api/listings/${id}`);
 
