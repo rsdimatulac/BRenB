@@ -1,0 +1,60 @@
+.error__container {
+    margin: 80px 172px 0px;
+    padding: 0px 24px;
+    height: 66.6vh;
+}
+
+.error__details {
+    display: flex;
+    flex-direction: row;
+    margin: 48px 0px;
+}
+
+.error__message {
+    box-sizing: border-box;
+    /* margin-right: 50px; */
+    width: 500px;
+}
+
+.error__message > h1 {
+    font-size: 145px;
+    color: #484848;
+    margin: 0px 0px 15px;
+}
+
+.error__message > h2 {
+    color: #484848;
+    font-size: 32px;
+    margin: 25px 0px 15px;
+    font-weight: normal;
+}
+
+.error__message > h6 {
+    margin: 25px 0px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #767676;
+}
+
+.error__image {
+    height: 464px;
+    width: 528px;
+    display: flex;
+    justify-content: center;
+}
+
+.links__container {
+    line-height: 20px;
+}
+
+.links__container > li {
+    color: #484848;
+    font-size: 14px;
+}
+
+.links__list {
+    color: #008489;
+    font-size: 14px;
+    text-decoration: none;
+}
+
