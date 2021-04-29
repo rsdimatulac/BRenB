@@ -14,10 +14,13 @@ import { FaRegSnowflake as Aircon } from  "react-icons/fa";
 import { FiMonitor as TV } from "react-icons/fi";
 import { FaFireExtinguisher as FireExt } from "react-icons/fa";
 import { getListingById } from "../../store/listing";
+import BookingForm from "./BookingForm";
 import './Show.css';
 
 const ShowPage = () => {
     const { id } = useParams();
+    const currentUser = useSelector(state => state.session);
+    console.log("USERRRRR", currentUser);
     const listing = useSelector(state => state.listing);
     const dispatch = useDispatch();
 
@@ -67,7 +70,7 @@ const ShowPage = () => {
                     </div>
                 </div>
                 <div className="booking__container">
-                    <h2>Booking here</h2>
+                    <BookingForm listing={listing} />
                 </div>
                 <div className="listing__more-info__container">
                     <div className="home__icon info__icon"><Home /></div>
