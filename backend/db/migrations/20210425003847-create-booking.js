@@ -30,6 +30,10 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
+      total_cost: {
+        type: Sequelize.FLOAT,
+        allowNull: false,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

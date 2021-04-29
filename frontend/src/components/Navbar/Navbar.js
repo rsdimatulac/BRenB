@@ -7,7 +7,6 @@ import { FiMenu as MenuIcon } from "react-icons/fi";
 import { FaUserCircle as AvatarIcon } from "react-icons/fa";
 import Logo from '../../images/homepage/airbnb-logo.png';
 import LogoBNW from '../../images/homepage/airbnb-logo-bnw.png';
-import DatePicker from '../DatePicker/DatePicker';
 import DropdownMenu from "./DropdownMenu";
 import "./Navbar.css"; // styling both NavBar and Dropdown Menu
 
@@ -19,15 +18,17 @@ const Navbar = ({ isLoaded }) => {
     const [showMenu, setShowMenu] = useState(false);
 
     // what triggers the navbar style change
-    window.onscroll = function () {
-        if (window.pageYOffset > 0) {
-            setLogo(Logo);
-            setDark("");
-        } else if (window.pageYOffset === 0) {
-            setLogo(LogoBNW);
-            setDark("dark");
-        }
-    };
+    // if (window.location.pathname !== "/bookings") {
+        window.onscroll = function () {
+            if (window.pageYOffset > 0) {
+                setLogo(Logo);
+                setDark("");
+            } else if (window.pageYOffset === 0) {
+                setLogo(LogoBNW);
+                setDark("dark");
+            }
+        };
+    // };
 
     // get the current user
     const sessionUser = useSelector(state => state.session.user);
@@ -62,7 +63,7 @@ const Navbar = ({ isLoaded }) => {
                     Start your search
                 </div>
                 <SearchIcon onClick={() => setShowDatePicker(!showDatePicker)} className="search-icon" />
-                {showDatePicker && <DatePicker />}
+                {/* {showDatePicker && <DatePicker />} */}
             </div>
             {dark === "dark" && <div className={`navbar__info ${dark}`}>
                 <span>Places to stay</span>
@@ -75,7 +76,6 @@ const Navbar = ({ isLoaded }) => {
                 <div id={`menu-avatar`} className={`${dark}`} onClick={openMenu}>
                     <MenuIcon id="menu-icon" />
                     {sessionUser ? <img id="avatar" src={sessionUser.avatar} alt="" /> : <AvatarIcon id="avatar" />}
-                    {/* {sessionUser.username === "guestuser" ? <img id="avatar" src={sessionUser.avatar}/> : <AvatarIcon id="avatar" />} */}
                 </div>
                 {showMenu && <DropdownMenu dark={dark} isLoaded={isLoaded} />}
             </div>

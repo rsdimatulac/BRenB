@@ -27,24 +27,27 @@ function App() {
       {isLoaded && (
         <Switch>
           <Route exact path="/">
+            {/* <Navbar isLoaded={isLoaded} /> */}
             <HomePage />
           </Route>
           <Route path="/listings/:id(\d+)">
+            {/* <Navbar isLoaded={isLoaded} /> */}
             <ShowPage />
           </Route>
-          {/* <Route path="/bookings/:data">
-            <BookingPage />
-          </Route> */}
           <Route path="/bookings">
+            {/* <Navbar isLoaded={isLoaded} /> */}
             <BookingPage />
           </Route>
           <Route path="/search">
+            {/* <Navbar isLoaded={isLoaded} /> */}
             <SearchPage />
           </Route>
           <Route path="/users/:id(\d+)">
+            {/* <Navbar isLoaded={isLoaded} /> */}
             <ProfilePage />
           </Route>
           <Route>
+            {/* <Navbar isLoaded={isLoaded} /> */}
             <PageNotFound />
           </Route>
         </Switch>

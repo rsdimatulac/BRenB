@@ -91,6 +91,7 @@ const ShowPage = () => {
                     <div className="rules info__text">
                         <h1>House Rules</h1>
                         <p>The host doesn’t allow parties, or smoking.</p>
+                        {/*The host has set some house rules, which you'll be asked to agree to when you book.*/}
                     </div>
                 </div>
                 <div className="listing__description">
