@@ -8,6 +8,7 @@ import ShowPage from "./components/ShowPage/Show";
 import ProfilePage from "./components/ProfilePage";
 import Footer from "./components/Footer/Footer";
 import PageNotFound from "./components/ErrorPage/PageNotFound";
+import BookingPage from "./components/BookingPage/Booking";
 import * as sessionActions from "./store/session";
 import './reset.css';
 import './index.css';
@@ -30,6 +31,12 @@ function App() {
           </Route>
           <Route path="/listings/:id(\d+)">
             <ShowPage />
+          </Route>
+          {/* <Route path="/bookings/:data">
+            <BookingPage />
+          </Route> */}
+          <Route path="/bookings">
+            <BookingPage />
           </Route>
           <Route path="/search">
             <SearchPage />

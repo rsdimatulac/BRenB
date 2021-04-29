@@ -11,16 +11,16 @@ const addBooking = booking => ({
 
 //////////////// THUNK ACTION CREATORS ////////////////////
 
-export const createBooking = data => async (dispatch) => {
+export const createBooking = booking => async (dispatch) => {
     const response = await csrfFetch(`/api/bookings`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
+        body: JSON.stringify(booking)
     });
 
     if (response.ok) {
         const booking = await response.json();
-        dispatchEvent(addBooking(booking));
+        dispatch(addBooking(booking));
         return booking;
     }
 }

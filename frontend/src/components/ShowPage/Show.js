@@ -19,8 +19,7 @@ import './Show.css';
 
 const ShowPage = () => {
     const { id } = useParams();
-    const currentUser = useSelector(state => state.session);
-    console.log("USERRRRR", currentUser);
+    const sessionUser = useSelector(state => state.session.user);
     const listing = useSelector(state => state.listing);
     const dispatch = useDispatch();
 
@@ -70,7 +69,7 @@ const ShowPage = () => {
                     </div>
                 </div>
                 <div className="booking__container">
-                    <BookingForm listing={listing} />
+                    <BookingForm listing={listing} userId={sessionUser?.id}/>
                 </div>
                 <div className="listing__more-info__container">
                     <div className="home__icon info__icon"><Home /></div>

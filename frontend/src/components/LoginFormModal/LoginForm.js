@@ -17,10 +17,14 @@ const LoginForm = () => {
         <Redirect to="/" />
     );
 
-    const loginGuest = () => {
-        setCredential("guestuser");
-        setPassword("Password1!");
-        return dispatch(sessionActions.login({ credential, password }))
+    const loginGuest = (e) => {
+        e.preventDefault();
+        setErrors([]);
+        return dispatch(sessionActions.login({ credential: "guestuser", password:"Password1!" }))
+            .catch(async (res) => {
+                const data = await res.json();
+                if (data && data.errors) setErrors(data.errors);
+            });
     }
 
     const handleSubmit = (e) => {
