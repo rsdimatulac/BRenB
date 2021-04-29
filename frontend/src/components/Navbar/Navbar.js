@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { GoSearch as SearchIcon } from "react-icons/go";
 import { MdLanguage as LanguageIcon } from "react-icons/md";
@@ -34,19 +34,19 @@ const Navbar = ({ isLoaded }) => {
 
     // shows the menu
     const openMenu = () => {
-        if (showMenu) return;
-        setShowMenu(true);
+        // if (showMenu) return;
+        setShowMenu((prevState) => !prevState);
     };
 
-    useEffect(() => {
-        if (!showMenu) return; // if showing, just return
-        const closeMenu = () => {
-            setShowMenu(false);
-        };
-        document.addEventListener('click', closeMenu);
-        // clean up
-        return () => document.removeEventListener("click", closeMenu);
-    }, [showMenu]);
+    // useEffect(() => {
+    //     if (!showMenu) return; // if showing, just return
+    //     const closeMenu = () => {
+    //         setShowMenu(false);
+    //     };
+    //     document.addEventListener('click', closeMenu);
+    //     // clean up
+    //     return () => document.removeEventListener("click", closeMenu);
+    // }, [showMenu]);
 
 
     return (
