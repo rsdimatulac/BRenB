@@ -1,0 +1,134 @@
+.price__container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    align-items: center;
+}
+
+.price__container div+div {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.rating__div {
+    display: flex;
+    align-items: center;
+}
+
+.booking__price {
+    font-size: 22px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.booking__price > span {
+    font-size: 16px;
+    font-weight: normal;
+    padding-left: 6px;
+}
+
+.form__booking {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__booking input {
+    height: 44px;
+    border-radius: 8px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.438);
+    outline-width: 0.5px;
+    outline-color: black;
+    font-size: 16px;
+}
+
+input::placeholder {
+    font-size: 16px;
+}
+
+.reserve__button > button {
+    background-color: inherit;
+    color: white;
+    outline-width: 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    height: 48px;
+    width: 100%;
+}
+
+.reserve__button {
+    background-color: #FF385C;
+    margin-top: 20px;
+    color: white;
+    height: 48px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    outline-width: 0;
+}
+
+.reserve__message {
+    font-size: 14px;
+    align-self: center;
+    margin-top: 10px;
+}
+
+#date__picker-title, #num__guests-title {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/**** DATE PICKER ****/
+.date__picker {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.date-range input {
+    height: 44px;
+    border-radius: 8px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.438);
+    outline-width: 0.5px;
+    outline-color: black;
+    width: 162px;
+    font-size: 16px;
+}
+
+.nice-dates-navigation, .nice-dates-day {
+  color: #111;
+}
+
+.nice-dates-popover {
+  box-shadow: none;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  max-width: 480px;
+  position: absolute;
+  right: -1px;
+}
+
+.nice-dates-popover.-open {
+    /* height: 300px; */
+}
+
+/* .nice-dates-popover > div {
+    height: 300px
+} */
+
+/* COLOR of the selection */
+.nice-dates-day:before {
+    background-color: #428CD2;
+}

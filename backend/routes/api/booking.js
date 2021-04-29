@@ -22,8 +22,8 @@ router.post('/bookings', asyncHandler(async (req, res) => {
         num_guests
     });
 
-    return res.json(newBooking);
-    // return res.redirect("/"); // redirect to home after booking
+    // return res.json(newBooking);
+    return res.redirect("/"); // redirect to home after booking
 }));
 
 module.exports = router;

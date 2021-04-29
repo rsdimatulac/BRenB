@@ -1,44 +1,97 @@
-// import { useParams } from "react-router-dom";
-import { useState } from "react";
-import { DateRangePicker } from 'react-dates';
-import 'react-dates/initialize';
-import 'react-dates/lib/css/_datepicker.css';
-// import './DatePicker.css';
+import { useState } from 'react';
+import { useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { enGB } from 'date-fns/locale';
+import { DateRangePicker, START_DATE, END_DATE } from 'react-nice-dates';
+import 'react-nice-dates/build/style.css';
+import { RiStarSFill as Star } from "react-icons/ri";
+// import { createBooking } from "../../store/booking";
+// import BookingPage from "../BookingPage/Booking";
+import LoginModal from "../LoginFormModal/LoginFormModal";
+import "./BookingForm.css";
+import "../LoginFormModal/LoginForm.css";
 
-const BookingForm = ({ listing }) => {
-    // const { id } = useParams();
-    const [date, setDate] = useState({
-        check_in: null,
-        check_out: null
-    });
+const BookingForm = ({ listing, userId }) => {
+    const [startDate, setStartDate] = useState();
+    const [endDate, setEndDate] = useState();
     const [num_guests, setNumGuests] = useState(1);
-    const [focusedInput, setFocusedInput] = useState(null);
+    const [focus, setFocus] = useState(START_DATE)
+    const handleFocusChange = newFocus => {
+        setFocus(newFocus || START_DATE)
+    }
+    const sessionUser = useSelector(state => state.session.user);
+    // const dispatch = useDispatch();
+    const history = useHistory();
+
+    const resetValues = () => {
+        setStartDate();
+        setEndDate();
+        setNumGuests(1);
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        const newBooking = {
+            listing_id: Number(listing?.id),
+            user_id: Number(userId),
+            check_in: startDate,
+            check_out: endDate,
+            num_guests: Number(num_guests)
+        }
+        
+        // const dataString = JSON.stringify(newBooking);
+
+        resetValues();
+
+        history.push(`/bookings`);
+        // history.push(`/bookings/${dataString}`);
+        // how to pass newBooking to BookingPage ???
+
+
+        // <BookingPage newBooking={newBooking} />
     }
+
 
     return (
         <div className="booking___form">
-            <div className="booking__price">{`$${listing?.price}`}<span>/ night</span></div>
+            <div className="price__container">
+                <div className="booking__price">{`$${listing?.price}`}<span>/ night</span></div>
+                <div className="rating__div"><span><Star className="rating__star"/></span>{listing?.rating}</div>
+            </div>
             <form onSubmit={handleSubmit} className="form__booking">
                 <div id={`date__picker-title`}>Dates</div>
                 <div className={`date__picker`}>
                     <DateRangePicker
-                        startDatePlaceholderText="Check in"
-                        endDatePlaceholderText="Check out"
-                        startDate={date.check_in} // momentPropTypes.momentObj or null,
-                        startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
-                        endDate={date.check_out} // momentPropTypes.momentObj or null,
-                        endDateId="your_unique_end_date_id" // PropTypes.string.isRequired,
-                        onDatesChange={({ startDate, endDate }) => setDate({ startDate, endDate })} // PropTypes.func.isRequired,
-                        focusedInput={focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
-                        onFocusChange={focusedInput => setFocusedInput(focusedInput)} // PropTypes.func.isRequired,
-                        showClearDates={true}
-                        regular={true}
-                        numberOfMonths={1}
-                    />
+                        startDate={startDate}
+                        endDate={endDate}
+                        onStartDateChange={setStartDate}
+                        onEndDateChange={setEndDate}
+                        focus={focus}
+                        onFocusChange={handleFocusChange}
+                        minimumDate={new Date()}
+                        minimumLength={1}
+                        format='MMM dd yyyy'
+                        locale={enGB}
+                    >
+                        {({ startDateInputProps, endDateInputProps, focus }) => (
+                            <div className='date-range'>
+                                <input
+                                    className={'input' + (focus === START_DATE ? ' -focused' : '')}
+                                    {...startDateInputProps}
+                                    placeholder='Check in'
+                                    required
+                                />
+                                <span className='date-range_arrow' />
+                                <input
+                                    className={'input' + (focus === END_DATE ? ' -focused' : '')}
+                                    {...endDateInputProps}
+                                    placeholder='Check out'
+                                    required
+                                />
+                            </div>
+                        )}
+                    </DateRangePicker>
                 </div>
                 <div id={`num__guests-title`}>Guests</div>
                 <input
@@ -47,9 +100,11 @@ const BookingForm = ({ listing }) => {
                     name="num-guests"
                     placeholder="0"
                     value={num_guests}
+                    required
                     onChange={(e) => setNumGuests(e.target.value)}
                 />
-                <button className="reserve__button" type="submit">Reserve</button>
+                {sessionUser ? <button className="reserve__button" type="submit">Reserve</button> : <div className="reserve__button"><LoginModal /></div>}
+                <div className="reserve__message">You won't be charged yet</div>
             </form>
         </div>
     );
