@@ -1,10 +1,22 @@
+// import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import * as sessionActions from '../../store/session';
+import LoginModal from '../LoginFormModal/LoginFormModal';
+import SignupModal from "../SignupFormModal/SignupFormModal";
 
 const DropdownMenu = ({ dark, isLoaded }) => {
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
+    // const [showLogin, setShowLogin] = useState(false);
+    // const [showSignUp, setShowSignUp] = useState(false);
+
+    const closeSignup = () => {
+    }
+
+    const closeLogin = () => {
+
+    }
 
     const logout = (e) => {
         e.preventDefault();
@@ -27,11 +39,11 @@ const DropdownMenu = ({ dark, isLoaded }) => {
     } else {
         sessionLinks = (
             <>
-                <li>
-                    <NavLink to="/login">Log In</NavLink>
+                <li className={`modal__buttons ${dark}`}>
+                    <LoginModal onClick={closeSignup}/>
                 </li>
-                <li>
-                    <NavLink to="/signup">Sign Up</NavLink>
+                <li className={`modal__buttons ${dark}`}>
+                    <SignupModal onClick={closeLogin}/>
                 </li>
             </>
         );
