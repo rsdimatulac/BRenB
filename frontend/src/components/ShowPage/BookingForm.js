@@ -5,11 +5,10 @@ import { enGB } from 'date-fns/locale';
 import { DateRangePicker, START_DATE, END_DATE } from 'react-nice-dates';
 import 'react-nice-dates/build/style.css';
 import { RiStarSFill as Star } from "react-icons/ri";
-// import { createBooking } from "../../store/booking";
-// import BookingPage from "../BookingPage/Booking";
 import LoginModal from "../LoginFormModal/LoginFormModal";
 import "./BookingForm.css";
 import "../LoginFormModal/LoginForm.css";
+import { storeNewBooking } from '../../store/booking';
 
 const BookingForm = ({ listing, userId }) => {
     const [startDate, setStartDate] = useState();
@@ -20,7 +19,7 @@ const BookingForm = ({ listing, userId }) => {
         setFocus(newFocus || START_DATE)
     }
     const sessionUser = useSelector(state => state.session.user);
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
     const history = useHistory();
 
     const resetValues = () => {
@@ -39,19 +38,16 @@ const BookingForm = ({ listing, userId }) => {
             check_out: endDate,
             num_guests: Number(num_guests)
         }
-        
-        // const dataString = JSON.stringify(newBooking);
 
+        // using redux to store the potential booking
+        dispatch(storeNewBooking(newBooking));
         resetValues();
 
-        history.push(`/bookings`);
-        // history.push(`/bookings/${dataString}`);
-        // how to pass newBooking to BookingPage ???
-
-
-        // <BookingPage newBooking={newBooking} />
+        // only redirect to bookings if user is logged in
+        if (sessionUser) {
+            history.push(`/bookings`);
+        }
     }
-
 
     return (
         <div className="booking___form">
@@ -109,5 +105,6 @@ const BookingForm = ({ listing, userId }) => {
         </div>
     );
 };
+
 
 export default BookingForm;

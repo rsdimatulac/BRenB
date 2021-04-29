@@ -120,14 +120,6 @@ input::placeholder {
   right: -1px;
 }
 
-.nice-dates-popover.-open {
-    /* height: 300px; */
-}
-
-/* .nice-dates-popover > div {
-    height: 300px
-} */
-
 /* COLOR of the selection */
 .nice-dates-day:before {
     background-color: #428CD2;

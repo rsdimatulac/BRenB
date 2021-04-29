@@ -1,0 +1,281 @@
+/* NAV BARRRR */
+/* .navbar__booking {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    padding: 0px 80px;
+    height: 80px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 4px;
+}
+
+.navbar__booking-logo {
+    object-fit: contain;
+    height: 65px;
+} */
+
+.confirm__booking-container {
+    padding: 0px 160px 0px;
+    /* margin-top: 50px; */
+    /* height: 100vh; */
+}
+
+.back__button {
+    display: flex;
+    align-items: center;
+    padding: 64px 0px 48px;
+}
+
+#back__button {
+    font-size: 16px;
+    border-radius: 50%;
+    padding: 10px;
+    color: black;
+}
+
+#back__button:hover {
+    background-color: lightgray;
+}
+
+.back__button > h1 {
+    padding-left: 24px;
+    font-size: 32px;
+}
+
+.booking__details-container {
+    /* height: 100vh; */
+    /* background-color: lightpink; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 31px;
+}
+
+.rare__find {
+    border-radius: 16px;
+    border: 1px solid rgb(221, 221, 221);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+    padding: 28px 30px;
+    height: 98px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-items: center;
+    line-height: 20px;
+}
+
+.rare__find > p {
+    color: #717171;
+}
+
+.rare__find-logo > img {
+    height: 33px;
+    width: 33px;
+    align-self: center;
+}
+
+.rare__find-logo {
+    justify-self: center;
+    align-self: flex-end;
+    padding-top: 5px;
+}
+
+.your__trip {
+    padding: 24px 0px 6px;
+    border-bottom: 1px solid lightgray;
+}
+
+.your__trip > h2 {
+    font-size: 22px;
+    padding-bottom: 24px;
+}
+
+.your__trip p {
+    padding-bottom: 18px;
+    color: #717171;
+}
+
+.your__trip > h3 {
+    padding-bottom: 8px;
+}
+
+.cancellation {
+    padding: 24px 0px;
+    border-bottom: 1px solid lightgray;
+}
+
+.cancellation > h2 {
+    font-size: 22px;
+    padding-bottom: 24px;
+}
+
+.cancellation > p {
+    color: #717171;
+    line-height: 20px;
+}
+
+.cancellation span {
+    color: black;
+    font-weight: 600;
+}
+
+.agreement__policies {
+    font-size: 12px;
+    padding: 24px 0px 0px;
+    line-height: 14px;
+}
+
+.agreement__policies span {
+    text-decoration: underline;
+    color: #004CC4;
+    font-weight: 600;
+}
+
+.confirm__pay-button {
+    padding: 24px 0px 0px;
+}
+
+.confirm__pay-button > button {
+    height: 48px;
+    width: 200px;
+    background-color: #FF385C;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    outline-width: 0;
+}
+
+.booking__total-container {
+    padding-left: 80px;
+}
+
+.booking__total {
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+    border: 1px solid rgb(221, 221, 221);
+    position: sticky;
+    top: 130px;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    height: 500px;
+    width: 380px;
+}
+
+.booking__image {
+    display: flex;
+    align-items: center;
+    padding-bottom: 24px;
+    border-bottom: 1px solid lightgray;
+
+}
+
+.booking__image > img {
+    height: 100px;
+    width: 124px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.booking__listing-details {
+    padding-left: 20px;
+    line-height: 20px;
+}
+
+.booking__listing-details p {
+    font-size: 12px;
+}
+
+.booking__listing-details > h4 {
+    font-size: 14px;
+    font-weight: normal;
+    padding: 3px 0px;
+}
+
+.booking__star {
+    font-size: 16px;
+    padding-top: 4px;
+    padding-right: 2px;
+    color: #FF385C;
+}
+
+.booking__listing-details div {
+    display: flex;
+    align-items: center;
+}
+
+.booking__listing-details div span {
+    font-size: 14px;
+}
+
+.booking__rating {
+    font-weight: 500;
+}
+
+.booking__listing-details p+p {
+    color: #717171;
+}
+
+.booking__reviews {
+    color: #717171;
+}
+
+.price__details-title {
+    font-size: 22px;
+    padding: 24px 0px;
+}
+
+.price__details {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 180px;
+    align-content: space-between;
+    padding-bottom: 24px;
+    border-bottom: 1px solid lightgray;
+}
+
+.price__details div {
+    padding: 10px 0px;
+}
+
+.price__rightside > div {
+    text-align: right;
+}
+
+.total__cost {
+    font-weight: 600;
+}
+
+.total__cost span {
+    text-decoration: underline;
+}
+
+.cancellation__reminder {
+    padding: 24px 0px;
+}
+
+.cancellation__reminder > h2 {
+    font-size: 22px;
+    padding-bottom: 24px;
+}
+
+.cancellation__reminder > p {
+    color: #717171;
+    line-height: 20px;
+}
+
+.cancellation__reminder span {
+    color: black;
+    font-weight: 600;
+}

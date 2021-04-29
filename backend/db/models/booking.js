@@ -22,6 +22,10 @@ module.exports = (sequelize, DataTypes) => {
     num_guests: {
       type: DataTypes.INTEGER,
       allowNull: false
+    },
+    total_cost: {
+      type: DataTypes.FLOAT,
+      allowNull: false
     }
   }, {});
   Booking.associate = function(models) {

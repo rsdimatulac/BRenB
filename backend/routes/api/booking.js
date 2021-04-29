@@ -13,17 +13,17 @@ const router = express.Router();
 
 // POST /api/bookings <--- Create the booking
 router.post('/bookings', asyncHandler(async (req, res) => {
-    const { user_id, listing_id, check_in, check_out, num_guests } = req.body;
+    const { user_id, listing_id, check_in, check_out, num_guests, total_cost } = req.body;
     const newBooking = await Booking.create({
         user_id,
         listing_id, 
         check_in, 
         check_out, 
-        num_guests
+        num_guests,
+        total_cost
     });
 
-    // return res.json(newBooking);
-    return res.redirect("/"); // redirect to home after booking
+    return res.json(newBooking);
 }));
 
 module.exports = router;
