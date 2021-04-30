@@ -6,10 +6,11 @@ import "./Footer.css";
 const Footer = () => {
     return (
         <div className="footer__container">
-            <div className="footer__copyright">© 2021 BRenB. No rights reserved.</div>
+            <div>© 2021 BRenB. No rights reserved.</div>
             <div className="footer__links">
                 <LanguageIcon id="language"/>
                 <p>English (US)</p>
+                <a href="https://rsdimatulac.github.io/" style={{ textDecoration: "none" }}><p className="about__link">About the Developer</p></a>
                 <a href="https://github.com/rsdimatulac/BRenB">
                     <FaGithub id="github"/>
                 </a>

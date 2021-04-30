@@ -23,6 +23,15 @@
     margin-right: 15px;
 }
 
+.about__link {
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.about__link:hover {
+    text-decoration: underline;
+}
+
 .footer__links > a {
     color: black;
     font-size: 25px;
