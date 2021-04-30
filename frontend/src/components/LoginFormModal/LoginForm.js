@@ -3,15 +3,16 @@ import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import SignUp from "../SignupFormModal/SignupFormModal";
+import useConsumeContext from "../../context/LoginSignupModalContext";
 import './LoginForm.css';
 
 const LoginForm = () => {
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
-
     const [credential, setCredential] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState([]);
+    const { setShowSignUp, setShowLogin, setShowMenu } = useConsumeContext();
 
     if (sessionUser) return (
         <Redirect to="/" />
@@ -20,16 +21,23 @@ const LoginForm = () => {
     const loginGuest = (e) => {
         e.preventDefault();
         setErrors([]);
-        return dispatch(sessionActions.login({ credential: "guestuser", password:"Password1!" }))
+
+        dispatch(sessionActions.login({ credential: "guestuser", password:"Password1!" }))
             .catch(async (res) => {
                 const data = await res.json();
                 if (data && data.errors) setErrors(data.errors);
             });
+        setShowSignUp(false);
+        setShowLogin(false);
+        setShowMenu(false);
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setErrors([]);
+        setShowSignUp(false);
+        setShowLogin(false);
+        setShowMenu(false);
         return dispatch(sessionActions.login({ credential, password }))
             .catch(async (res) => {
                 const data = await res.json();
@@ -60,7 +68,7 @@ const LoginForm = () => {
                 />
                 <button className="login__buttons" type="submit">Login</button>
                 <button className="login__buttons" onClick={loginGuest}>Login as Guest</button>
-                <div className="signup__link">Don't have an account?<span id="signup__link"><SignUp /></span></div>
+                <div className="signup__link">Don't have an account?<span id="signup__link"><SignUp/></span></div>
             </form>
         </div>
     );

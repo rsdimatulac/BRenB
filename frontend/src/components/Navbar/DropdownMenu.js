@@ -1,26 +1,21 @@
-// import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import * as sessionActions from '../../store/session';
 import LoginModal from '../LoginFormModal/LoginFormModal';
 import SignupModal from "../SignupFormModal/SignupFormModal";
+import useConsumeContext from "../../context/LoginSignupModalContext";
 
 const DropdownMenu = ({ dark, isLoaded }) => {
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
-    // const [showLogin, setShowLogin] = useState(false);
-    // const [showSignUp, setShowSignUp] = useState(false);
-
-    const closeSignup = () => {
-    }
-
-    const closeLogin = () => {
-
-    }
+    const { setShowMenu } = useConsumeContext();
+    const history = useHistory();
 
     const logout = (e) => {
         e.preventDefault();
+        history.push("/");
         dispatch(sessionActions.logout());
+        setShowMenu(false);
     };
 
     // What to show on the dropdown menu
@@ -40,10 +35,10 @@ const DropdownMenu = ({ dark, isLoaded }) => {
         sessionLinks = (
             <>
                 <li className={`modal__buttons ${dark}`}>
-                    <LoginModal onClick={closeSignup}/>
+                    <LoginModal />
                 </li>
                 <li className={`modal__buttons ${dark}`}>
-                    <SignupModal onClick={closeLogin}/>
+                    <SignupModal />
                 </li>
             </>
         );
