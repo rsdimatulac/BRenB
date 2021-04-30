@@ -4,6 +4,7 @@ const usersRouter = require('./users.js');
 const listingsRouter = require('./listings.js');
 const searchRouter = require('./search.js');
 const bookingRouter = require('./booking.js');
+const reviewsRouter = require('./review.js');
 
 router.use('/session', sessionRouter); // /api/session
 
@@ -14,6 +15,8 @@ router.use('/listings', listingsRouter); // /api/listings
 router.use('/search', searchRouter); // /api/search
 
 router.use(bookingRouter); // /api/bookings
+
+router.use(reviewsRouter); // /api/listings/:id/reviews
 
 router.post('/test', function(req,res) {  // /api/test
     res.json({ requestBody: req.body });

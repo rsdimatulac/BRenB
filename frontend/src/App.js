@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar/Navbar";
 import HomePage from "./components/HomePage/Home";
 import SearchPage from "./components/SearchPage/Search";
 import ShowPage from "./components/ShowPage/Show";
-import ProfilePage from "./components/ProfilePage";
+import ProfilePage from "./components/ProfilePage/Profile";
 import Footer from "./components/Footer/Footer";
 import PageNotFound from "./components/ErrorPage/PageNotFound";
 import BookingPage from "./components/BookingPage/Booking";

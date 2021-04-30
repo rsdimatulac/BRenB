@@ -79,7 +79,7 @@ module.exports = {
         rating: 5.0
       },
       { // 6
-        title: "Gabbie's Garden Getaway for 1 or 2",
+        title: "Jack's Garden Getaway for 1 or 2",
         description: "Tucked away in a quiet, historic Phinney Ridge neighborhood, your modern, fully equipped one bedroom is located in the garden level of an updated 1909 farmhouse. Make a meal in a fully equipped kitchen, sleep in a bed you won't want to get out of, relax in the living room and play the guitar or have a workout in your private gym.Enjoy the garden views from every window.",
         type: 'Entire home',
         host_id: 7, // Jack Dorsey

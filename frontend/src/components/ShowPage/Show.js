@@ -14,13 +14,19 @@ import { FaRegSnowflake as Aircon } from  "react-icons/fa";
 import { FiMonitor as TV } from "react-icons/fi";
 import { FaFireExtinguisher as FireExt } from "react-icons/fa";
 import { getListingById } from "../../store/listing";
+import { format, parseISO } from "date-fns";
 import BookingForm from "./BookingForm";
 import './Show.css';
+import { getReviews } from "../../store/review";
 
 const ShowPage = () => {
     const { id } = useParams();
     const sessionUser = useSelector(state => state.session.user);
     const listing = useSelector(state => state.listing);
+    const reviews = useSelector(state => state.review);
+    // console.log(parseISO(reviews[0]?.createdAt))
+    // console.log(format(parseISO(reviews[0]?.createdAt), "MMMM yyyy"))
+
     const dispatch = useDispatch();
 
     const imagesArray = listing?.Images;
@@ -31,6 +37,7 @@ const ShowPage = () => {
 
     useEffect(() => {
         dispatch(getListingById(Number(id)));
+        dispatch(getReviews(Number(id)));
     }, [dispatch, id])
     
     // redirect to page not found if Listing is NULL
@@ -47,7 +54,8 @@ const ShowPage = () => {
                         <span><Star className="rating__star" /></span>
                         <span className="listing__rating">{`${listing?.rating}`}</span>
                         <span>・</span>
-                        <span className="listing__reviews">{`(Total reviews)`}</span>
+                        {/* <span className="listing__reviews">{reviews?.length > 1 ? `${reviews?.length} reviews` : `${reviews?.length} review`}</span> */}
+                        <span className="listing__reviews"><a href="#reviews" style={{ textDecoration: "none", color: "inherit" }}>{reviews?.length > 1 ? `(${reviews?.length} reviews)` : `(${reviews?.length} review)`}</a></span>
                         <span>・</span>
                         <span className="listing__location">{`${listing?.city}, ${listing?.state}, United States`}</span>
                     </div>
@@ -106,18 +114,35 @@ const ShowPage = () => {
                     <div><Parking className="amenities__icon"/><span>Free parking on premises</span></div>
                     <div><Wifi className="amenities__icon"/><span>WiFi</span></div>
                     <div><Laptop className="amenities__icon"/><span>Dedicated workspace</span></div>
-                    <div><Essential className="amenities__icon"/><span>Essentials</span></div>
+                    <div><Essential id="reviews" className="amenities__icon"/><span>Essentials</span></div>
                     <div><Kitchen className="amenities__icon"/><span>Kitchen</span></div>
                     <div><Aircon className="amenities__icon"/><span>Air conditioning</span></div>
                     <div><TV className="amenities__icon"/><span>TV</span></div>
                     <div><FireExt className="amenities__icon"/><span>Fire Extinguisher</span></div>
                 </div>
                 <div className="reviews__container">
-                    <h2>Reviews here</h2>
+                    <div className="reviews__rating-info">
+                        <span><Star className="review-rating__star" /></span>
+                        <span className="reviews__listing-rating">{listing?.rating}</span>
+                        <span>{reviews?.length > 1 ? `(${reviews?.length} reviews)` : `(${reviews?.length} review)`}</span>
+                    </div>
+                    <div className="user__review-container">
+                        {Array.from(reviews)?.map(review => (
+                            <div className="user__review" key={review.id}>
+                                <div className="user__image-info">
+                                    <img src={review?.User.avatar} alt=""/>
+                                    <div>
+                                        <h2>{review?.User.firstName}</h2>
+                                        <p>{format(parseISO(review?.createdAt), "MMMM yyyy")}</p>
+                                    </div>
+                                </div>
+                                <div className="user__review-text">
+                                    <p>{review?.review}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
-            </Route>
-            <Route path="/bookings">
-                {/* TODO: Add Booking Component here */}
             </Route>
         </div>
     )

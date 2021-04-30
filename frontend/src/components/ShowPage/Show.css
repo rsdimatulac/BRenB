@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 .show__container {
     padding: 10px 100px;
     display: grid;
@@ -41,6 +45,7 @@
 .listing__reviews {
     text-decoration: underline;
     color: #717171;
+    font-weight: 600;
 }
 
 .listing__location {
@@ -98,7 +103,6 @@
     grid-area: 3 / 9 / 5 / 13;
     border-radius: 20px;
     padding: 30px;
-    /* margin-top: 15px; */
     box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
     border: 1px solid rgb(221, 221, 221);
     /* position: -webkit-sticky; */
@@ -211,5 +215,62 @@
 
 .reviews__container {
     grid-area: 8 / 1 / 9 / 8;
-    background-color: hotpink;
+}
+
+.reviews__rating-info {
+    display: flex;
+    align-items: center;
+    padding-bottom: 42px;
+}
+
+.reviews__rating-info span {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.review-rating__star {
+    color: #FF385C;
+    padding-right: 5px;
+}
+
+.reviews__listing-rating {
+    padding-right: 5px;
+}
+
+.user__review-container {
+    /* background-color: lightblue; */
+    padding-bottom: 40px;
+}
+
+.user__review {
+    padding-bottom: 42px;
+}
+
+.user__image-info img {
+    height: 56px;
+    width: 56px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.user__image-info {
+    display: flex;
+    align-items: center;
+    padding-bottom: 16px;
+}
+
+.user__image-info div {
+    padding-left: 12px;
+    line-height: 18px;
+}
+
+.user__image-info div p {
+    font-size: 14px;
+    font-weight: normal;
+    color: #717171;
+}
+
+.user__review-text {
+    line-height: 24px;
+    color: #222222;
 }
