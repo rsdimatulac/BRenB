@@ -20,9 +20,9 @@ const Booking = () => {
     const host = listing?.User;
     const bed = listing?.num_beds;
     const bath = listing?.num_baths;
-    const guest = listing?.num_guests;
     const imagesArray = listing?.Images;
-
+    
+    const guest = booking?.num_guests;
     const startDate = format(booking.check_in, "MMM dd");
     const endDate = format(booking.check_out, "dd, yyyy");
     const num_nights = differenceInCalendarDays(booking.check_out, booking.check_in);
