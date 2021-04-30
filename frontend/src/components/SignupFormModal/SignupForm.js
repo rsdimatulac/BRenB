@@ -4,10 +4,12 @@ import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import Login from '../LoginFormModal/LoginFormModal';
 import './SignupForm.css';
+import useConsumeContext from "../../context/LoginSignupModalContext";
 
 function SignupFormPage() {
     const dispatch = useDispatch();
     const sessionUser = useSelector((state) => state.session.user);
+    const { setShowSignUp, setShowLogin, setShowMenu } = useConsumeContext();
 
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -22,6 +24,9 @@ function SignupFormPage() {
     const handleSubmit = (e) => {
         e.preventDefault();
         setErrors([]);
+        setShowSignUp(false);
+        setShowLogin(false);
+        setShowMenu(false);
         return dispatch(sessionActions.signup({ firstName, lastName, email, username, password, confirmPassword }))
             .catch(async (res) => {
                 const data = await res.json();
