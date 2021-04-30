@@ -13,7 +13,7 @@ module.exports = {
         hashedPassword: bcrypt.hashSync('Microsoft1!'),
         avatar: "https://brenb.s3.amazonaws.com/avatars/user-2.jpg",
         bio: 'Founder of Microsoft. Billionaire by day, Airbnb Host by night.',
-        createdAt: faker.datatype.datetime()
+        createdAt: faker.date.between('2016-11-27', '2021-05-03')
       },
       { // 3
         firstName: 'Mark',
@@ -23,7 +23,7 @@ module.exports = {
         hashedPassword: bcrypt.hashSync('Facebook1!'),
         avatar: "https://brenb.s3.amazonaws.com/avatars/user-3.jpg",
         bio: 'CEO of Facebook. Part-time Airbnb Host.',
-        createdAt: faker.datatype.datetime()
+        createdAt: faker.date.between('2016-11-27', '2021-05-03')
       },
       { // 4
         firstName: 'Brian',
@@ -43,7 +43,7 @@ module.exports = {
         hashedPassword: bcrypt.hashSync('Google1!'),
         avatar: "https://brenb.s3.amazonaws.com/avatars/user-5.jpg",
         bio: 'CEO of Google. A for Alphabet.',
-        createdAt: faker.datatype.datetime()
+        createdAt: faker.date.between('2016-11-27', '2021-05-03')
       },
       { // 6
         firstName: 'Reed',
@@ -53,7 +53,7 @@ module.exports = {
         hashedPassword: bcrypt.hashSync('Netflix1!'),
         avatar: "https://brenb.s3.amazonaws.com/avatars/user-6.jpg",
         bio: 'CEO of Netflix. My airbnb is perfect to do Netflix and chill.',
-        createdAt: faker.datatype.datetime()
+        createdAt: faker.date.between('2016-11-27', '2021-05-03')
       },
       { // 7
         firstName: 'Jack',
@@ -63,7 +63,7 @@ module.exports = {
         hashedPassword: bcrypt.hashSync('Twitter1!'),
         avatar: "https://brenb.s3.amazonaws.com/avatars/user-7.jpg",
         bio: 'CEO of Twitter. Follow me on Twitter!',
-        createdAt: faker.datatype.datetime()
+        createdAt: faker.date.between('2016-11-27', '2021-05-03')
       },
       { // 8
         firstName: 'Elon',
@@ -73,7 +73,7 @@ module.exports = {
         hashedPassword: bcrypt.hashSync('Tesla01!'),
         avatar: "https://brenb.s3.amazonaws.com/avatars/user-8.jpeg",
         bio: 'CEO of Tesla. Proud father of X Æ A-12.',
-        createdAt: faker.datatype.datetime()
+        createdAt: faker.date.between('2016-11-27', '2021-05-03')
       },
       { // 9
         firstName: 'Renerose',
@@ -83,7 +83,7 @@ module.exports = {
         hashedPassword: bcrypt.hashSync('Banana1!'),
         avatar: "https://brenb.s3.amazonaws.com/avatars/user-9.jpg",
         bio: 'Pilot turned Software Engineer.',
-        createdAt: faker.datatype.datetime()
+        createdAt: faker.date.between('2016-11-27', '2021-05-03')
       },
       { // 10
         firstName: 'Jeff',
@@ -93,7 +93,7 @@ module.exports = {
         hashedPassword: bcrypt.hashSync('Amazon1!'),
         avatar: "https://brenb.s3.amazonaws.com/avatars/user-10.jpg",
         bio: 'CEO of Amazon. Work for me.',
-        createdAt: faker.datatype.datetime()
+        createdAt: faker.date.between('2016-11-27', '2021-05-03')
       },
       { // 11
         firstName: 'Tim',
@@ -103,7 +103,7 @@ module.exports = {
         hashedPassword: bcrypt.hashSync('Apple01!'),
         avatar: "https://brenb.s3.amazonaws.com/avatars/user-11.jpg",
         bio: 'CEO of Apple.',
-        createdAt: faker.datatype.datetime()
+        createdAt: faker.date.between('2016-11-27', '2021-05-03')
       },
     ]);
   },
