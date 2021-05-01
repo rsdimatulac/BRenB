@@ -1,0 +1,123 @@
+.booking__tile-container {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 10px;
+}
+
+.booking__tile-container img {
+    height: 120px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.booking__trips-top {
+    height: 60px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0,0,0,0.03);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    /* border-bottom: 1px solid rgb(221, 221, 221); */
+    flex-wrap: wrap;
+    line-height: 20px;
+}
+
+.trips__top-details > h3, .trips__top-details > h4 {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.booking__trips-top button {
+    background-color: #FF385C;
+    border-radius: 8px;
+    color: white;
+    height: 38px;
+    width: 140px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    outline-width: 0;
+    align-self: flex-end;
+}
+
+.booking__trips-top p {
+    align-self: flex-end;
+    padding-top: 2px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.booking__tile-bottom {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.booking__tile-bottom div+div {
+    width: 100%;
+}
+
+.booking__details-top {
+    padding-left: 1rem;
+    line-height: 18px;
+}
+
+.booking__details-top p {
+    font-size: 14px;
+    color: #717171;
+}
+
+.booking__details-top p+p {
+    color: lightgray;
+}
+
+.booking__details-top h4 span {
+    font-size: 14px;
+    color: #717171;
+    font-weight: normal;
+}
+
+.booking__details-top h3 {
+    padding-top: 2px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.booking__trips-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+
+.booking__trips-bottom div {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.booking__trips-bottom h2 {
+    font-weight: 500;
+}
+
+.star__icon-booking {
+    color: #FF385C;
+    font-size: 16px;
+    padding-top: 4px;
+    padding-right: 2px;
+}
+
+.booking__trips-bottom div span+span {
+    font-weight: 600;
+}
+
+.booking__trips-bottom div span+span+span {
+    font-weight: 500;
+    color: #717171;
+    padding-left: 3px;
+}
+

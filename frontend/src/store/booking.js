@@ -2,6 +2,7 @@ import { csrfFetch } from './csrf';
 
 const ADD_BOOKING = "booking/ADD";
 const STORE_BOOKING = "booking/STORE";
+const GET_BOOKING = "booking/GET";
 
 /////////////////// ACTION CREATORS ////////////////////
 
@@ -12,6 +13,11 @@ const addBooking = booking => ({
 
 const newBooking = booking => ({
     type: STORE_BOOKING,
+    booking
+});
+
+const getBooking = (booking) => ({
+    type: GET_BOOKING,
     booking
 });
 
@@ -36,6 +42,16 @@ export const storeNewBooking = booking => async (dispatch) => {
     return booking;
 }
 
+export const getBookings = (userId) => async (dispatch) => {
+    const response = await csrfFetch(`/api/users/${userId}/bookings`);
+
+    if (response.ok) {
+        const booking = await response.json();
+        dispatch(getBooking(booking));
+        return booking;
+    };
+}
+
 /////////////////////// REDUCER //////////////////////////
 
 const initialState = {};
@@ -45,6 +61,8 @@ const bookingReducer = (state = initialState, action) => {
         case ADD_BOOKING:
             return action.booking;
         case STORE_BOOKING:
+            return action.booking;
+        case GET_BOOKING:
             return action.booking;
         default:
             return state;

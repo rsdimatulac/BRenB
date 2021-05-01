@@ -14,6 +14,7 @@ import Tacoma from "../../images/homepage/explore-6.webp";
 import Vancouver from "../../images/homepage/explore-7.webp";
 import Orcas from "../../images/homepage/explore-3.webp";
 import { getListings } from "../../store/listing";
+import useConsumeContext from "../../context/LoginSignupModalContext";
 import Banner from './Banner';
 import Tile from "./Tile";
 import City from "./City";
@@ -21,6 +22,7 @@ import "./Home.css";
 
 const HomePage = () => {
   const listings = useSelector(state => state.listing);
+  const { setShowMenu } = useConsumeContext();
   const dispatch = useDispatch();
   const image1 = listings[0]?.Images[0].url;
   const image2 = listings[1]?.Images[0].url;
@@ -28,8 +30,9 @@ const HomePage = () => {
   const image4 = listings[3]?.Images[0].url;
 
   useEffect(() => {
+    setShowMenu(false);
     dispatch(getListings());
-  }, [dispatch]);
+  }, [dispatch, setShowMenu]);
 
   return (
     <>

@@ -14,16 +14,19 @@ import { FaRegSnowflake as Aircon } from  "react-icons/fa";
 import { FiMonitor as TV } from "react-icons/fi";
 import { FaFireExtinguisher as FireExt } from "react-icons/fa";
 import { getListingById } from "../../store/listing";
-import { format, parseISO } from "date-fns";
-import BookingForm from "./BookingForm";
-import './Show.css';
 import { getReviews } from "../../store/review";
+import { format, parseISO } from "date-fns";
+import BookingForm from "./BookingForm"; 
+import useConsumeContext from "../../context/LoginSignupModalContext";
+import './Show.css';
 
 const ShowPage = () => {
     const { id } = useParams();
     const sessionUser = useSelector(state => state.session.user);
     const listing = useSelector(state => state.listing);
     const reviews = useSelector(state => state.review);
+    const { setShowMenu } = useConsumeContext();
+
     // console.log(parseISO(reviews[0]?.createdAt))
     // console.log(format(parseISO(reviews[0]?.createdAt), "MMMM yyyy"))
 
@@ -36,9 +39,10 @@ const ShowPage = () => {
     const guest = listing?.num_guests;
 
     useEffect(() => {
+        setShowMenu(false);
         dispatch(getListingById(Number(id)));
         dispatch(getReviews(Number(id)));
-    }, [dispatch, id])
+    }, [dispatch, id, setShowMenu])
     
     // redirect to page not found if Listing is NULL
     if (!listing) {
