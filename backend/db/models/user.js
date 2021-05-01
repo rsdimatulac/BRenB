@@ -84,8 +84,8 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   User.prototype.toSafeObject = function () { // remember, this cannot be an arrow function
-    const { id, username, email, avatar, firstName, lastName, bio } = this; // context will be the User instance
-    return { id, username, email, avatar, firstName, lastName, bio };
+    const { id, username, email, avatar, firstName, lastName, bio, createdAt } = this; // context will be the User instance
+    return { id, username, email, avatar, firstName, lastName, bio, createdAt };
   };
 
   User.prototype.validatePassword = function (password) {
