@@ -53,13 +53,13 @@ const validateSignup = [
         .isLength({ min: 8, max: 50 })
         .withMessage('Password must be between 8 to 50 characters long.')
         .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/, 'g')
-        .withMessage('Password must contain at least 1 lowercase, uppercase, number, and a special character.'),
+        .withMessage('Password must have at least 1 lowercase, uppercase, number, a special character (i.e. !@#$%^&*).'),
     check('confirmPassword')
         .exists({ checkFalsy: true })
         .withMessage('Please provide a value for Confirm password.')
         .custom((value, { req }) => {
             if (value !== req.body.password) {
-                throw new Error('Confirm password does not match Password.');
+                throw new Error('Confirm password does not match password.');
             }
             return true;
         }), 

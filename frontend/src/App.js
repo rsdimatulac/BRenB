@@ -30,25 +30,29 @@ function App() {
           <Switch>
             <Route exact path="/">
               <HomePage />
+              <Footer />
             </Route>
             <Route path="/listings/:id(\d+)">
               <ShowPage />
+              <Footer />
             </Route>
             <Route path="/bookings">
               <BookingPage />
+              <Footer />
             </Route>
             <Route path="/search">
               <SearchPage />
             </Route>
             <Route path="/users/:id(\d+)">
               <ProfilePage />
+              <Footer />
             </Route>
             <Route>
               <PageNotFound />
+              <Footer />
             </Route>
           </Switch>
         )}
-        <Footer />
       </LoginSignupModalProvider>
     </>
   );

@@ -8,7 +8,7 @@ import "./BookingResult.css";
 
 const BookingResult = ({ booking }) => {
     const dispatch = useDispatch();
-    const reviews = useSelector(state => state.review);
+    // const reviews = useSelector(state => state.review);
     const checkIn = format(parseISO(booking?.check_in), "MMMM dd, yyyy");
     const checkOut = format(parseISO(booking?.check_out), "MMMM dd, yyyy");
     const city = booking?.Listing.city;
@@ -73,7 +73,7 @@ const BookingResult = ({ booking }) => {
                             <div>
                                 <span><Star className="star__icon-booking"/></span>
                                 <span>{rating}</span>
-                                <span>{reviews?.length > 1 ? `(${reviews?.length} reviews)` : `(${reviews?.length} review)`}</span>
+                                {/* <span>{reviews?.length > 1 ? `(${reviews?.length} reviews)` : `(${reviews?.length} review)`}</span> */}
                             </div>
                             <h2>${price} / night</h2>
                         </div>

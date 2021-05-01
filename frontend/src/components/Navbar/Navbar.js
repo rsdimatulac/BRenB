@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { GoSearch as SearchIcon } from "react-icons/go";
@@ -16,6 +16,7 @@ const Navbar = ({ isLoaded }) => {
     const [logo, setLogo] = useState(LogoBNW);
     const [showDatePicker, setShowDatePicker] = useState(false);
     const { showMenu, setShowMenu, setShowLogin, setShowSignUp } = useConsumeContext();
+    const history = useHistory();
 
     // what triggers the navbar style change
     // if (window.location.pathname !== "/bookings") {
@@ -29,6 +30,10 @@ const Navbar = ({ isLoaded }) => {
         };
     };
     // };
+
+    const handleClick = () => {
+        history.push("/search");
+    }
 
     // get the current user
     const sessionUser = useSelector(state => state.session.user);
@@ -49,11 +54,13 @@ const Navbar = ({ isLoaded }) => {
                     src={logo}
                     alt="AirBnB Logo" />
             </NavLink>
-            <div className={`navbar__search ${dark}`} onClick={() => setShowDatePicker(!showDatePicker)}>
+            <div className={`navbar__search ${dark}`} onClick={handleClick}>
+            {/* <div className={`navbar__search ${dark}`} onClick={() => setShowDatePicker(!showDatePicker)}> */}
                 <div className="navbar__search-title">
                     Start your search
                 </div>
-                <SearchIcon onClick={() => setShowDatePicker(!showDatePicker)} className="search-icon" />
+                <SearchIcon onClick={handleClick} className="search-icon" />
+                {/* <SearchIcon onClick={() => setShowDatePicker(!showDatePicker)} className="search-icon" /> */}
                 {/* {showDatePicker && <DatePicker />} */}
             </div>
             {dark === "dark" && <div className={`navbar__info ${dark}`}>
