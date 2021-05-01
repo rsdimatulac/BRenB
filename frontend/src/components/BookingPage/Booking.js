@@ -8,7 +8,7 @@ import { createBooking } from "../../store/booking";
 import RareFind from "../../images/rare-find.png";
 import differenceInCalendarDays from 'date-fns/differenceInCalendarDays';
 import { format } from "date-fns";
-// import Logo from '../../images/homepage/airbnb-logo.png';
+import useConsumeContext from "../../context/LoginSignupModalContext";
 import "./Booking.css";
 
 const Booking = () => {
@@ -16,12 +16,12 @@ const Booking = () => {
     const listing = useSelector(state => state.listing);
     const dispatch = useDispatch();
     const history = useHistory();
+    const { setShowMenu } = useConsumeContext();
 
     const host = listing?.User;
     const bed = listing?.num_beds;
     const bath = listing?.num_baths;
     const imagesArray = listing?.Images;
-    
     const guest = booking?.num_guests;
     const startDate = format(booking.check_in, "MMM dd");
     const endDate = format(booking.check_out, "dd, yyyy");
@@ -39,8 +39,9 @@ const Booking = () => {
     booking.total_cost = parseFloat(total.split(",").join(""));
 
     useEffect(() => {
+        setShowMenu(false);
         dispatch(getListingById(Number(booking?.listing_id)));
-    }, [dispatch, booking.listing_id])
+    }, [dispatch, booking.listing_id, setShowMenu])
 
     const handleClick = (e) => {
         e.preventDefault();
@@ -68,7 +69,6 @@ const Booking = () => {
                 </NavLink>
             </nav> */}
             <div className="confirm__booking-container">
-                {/* <h2>Booking here</h2> */}
                 <div className="back__button">
                     <NavLink to={`/listings/${listing?.id}`}>
                         <div id="back__button"><BackButton /></div>

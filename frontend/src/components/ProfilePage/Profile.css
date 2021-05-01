@@ -1,5 +1,161 @@
 .profile__container {
-    padding: 0px 80px;
-    /* background-color: lightgreen; */
-    height: 100vw;
+    margin: 48px 200px;
+    display: grid;
+    grid-template-columns: 0.55fr 1.1fr;
+    column-gap: 70px;
+}
+
+.profile__info-container {
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+    border: 1px solid rgb(221, 221, 221);
+    height: 510px;
+    position: sticky;
+    top: 120px;
+}
+
+.profile__info-container * {
+    color: #222222;
+}
+
+.profile__details {
+    border-bottom: 1px solid rgb(221, 221, 221);
+    padding-bottom: 18px;
+}
+
+.profile__avatar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 42px;
+}
+
+.profile__avatar img {
+    height: 128px;
+    width: 128px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile__identity-icons {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+#star-outline-icon, #verified-icon {
+    font-size: 24px;
+    padding-right: 10px;
+}
+
+.profile__verification {
+    padding-top: 32px;
+}
+
+.profile__verification > h1 {
+    padding-bottom: 24px;
+    font-size: 18px;
+}
+
+.verification__checks {
+    display: flex;
+    align-items: center;
+    line-height: 30px;
+}
+
+#check-icon {
+    padding-right: 15px;
+}
+
+.learn__more {
+    font-size: 14px;
+    margin-top: 25px;
+    line-height: 18px;
+}
+
+.learn__more span {
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.user__profile-info-container {
+    padding-bottom: 32px;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.user__profile-info-container * {
+    margin-bottom: 14px;
+    color: #222222;
+}
+
+.user__profile-info-container > h1 {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.user__profile-info-container > h6 {
+    color: #717171;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.user__profile-info-container > h3 {
+    margin-top: 10px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.user__profile-info-container > p {
+    margin-bottom: 20px;
+}
+
+#home-icon, #speaks-icon {
+    margin-bottom: 0px;
+    padding-right: 8px;
+}
+
+#home-icon {
+    font-size: 20px;
+}
+
+#speaks-icon {
+    font-size: 17px;
+    padding-left: 2px;
+}
+
+.user__profile-info-container > div {
+    line-height: 30px;
+}
+
+.user__profile-info-container > div, 
+.user__profile-info-container > div > p {
+    font-weight: normal;
+    margin-bottom: 0px;
+    display: flex;
+    align-items: center;
+}
+
+.all__bookings-container {
+    padding-top: 30px;
+}
+
+.all__bookings-container > h2 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+
+/* MODAL STYLING HERE */
+.profile__edit-container {
+    line-height: 0px;
+}
+
+.profile__edit-container span {
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: underline;
 }
