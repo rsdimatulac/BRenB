@@ -24,9 +24,13 @@ function SignupFormPage() {
     const handleSubmit = (e) => {
         e.preventDefault();
         setErrors([]);
-        setShowSignUp(false);
-        setShowLogin(false);
-        setShowMenu(false);
+        
+        if (!errors) {
+            setShowSignUp(false);
+            setShowLogin(false);
+            setShowMenu(false);
+        };
+
         return dispatch(sessionActions.signup({ firstName, lastName, email, username, password, confirmPassword }))
             .catch(async (res) => {
                 const data = await res.json();
@@ -38,7 +42,7 @@ function SignupFormPage() {
         <div className="signup__container">
             <form onSubmit={handleSubmit} className="form__container-signup">
                 <h2>Welcome to BRenB</h2>
-                {errors.map((error, idx) => (
+                {errors?.map((error, idx) => (
                     <div className="error__validation" key={idx}>・{error}</div>
                 ))}
                 <div className="fullname__input">

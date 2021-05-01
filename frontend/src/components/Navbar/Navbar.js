@@ -15,9 +15,7 @@ const Navbar = ({ isLoaded }) => {
     const [dark, setDark] = useState('dark');
     const [logo, setLogo] = useState(LogoBNW);
     const [showDatePicker, setShowDatePicker] = useState(false);
-    // const [showMenu, setShowMenu] = useState(false);
-
-    const { showMenu, setShowMenu } = useConsumeContext();
+    const { showMenu, setShowMenu, setShowLogin, setShowSignUp } = useConsumeContext();
 
     // what triggers the navbar style change
     // if (window.location.pathname !== "/bookings") {
@@ -28,7 +26,7 @@ const Navbar = ({ isLoaded }) => {
         } else if (window.pageYOffset === 0) {
             setLogo(LogoBNW);
             setDark("dark");
-        }
+        };
     };
     // };
 
@@ -39,6 +37,8 @@ const Navbar = ({ isLoaded }) => {
     const openMenu = () => {
         // if (showMenu) return;
         setShowMenu((prevState) => !prevState);
+        setShowLogin(false); // closes when dropdown closes
+        setShowSignUp(false); // closes when dropdown closes
     };
 
     return (

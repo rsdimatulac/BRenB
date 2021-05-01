@@ -117,7 +117,7 @@ const HomePage = () => {
             price={`$${listings[0]?.price} / night`}
           />
         </NavLink>
-        <NavLink to={`/listings/${listings[4]?.id}`} style={{ textDecoration: "none" }}>
+        <NavLink to={`/listings/${listings[3]?.id}`} style={{ textDecoration: "none" }}>
           <Tile
             src={image4}
             title={listings[3]?.title}

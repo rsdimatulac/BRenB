@@ -54,6 +54,11 @@ input::placeholder {
     -webkit-font-smoothing: antialiased;
 }
 
+.login__buttons:hover {
+    background-color: #e60730;
+    cursor: pointer;
+}
+
 #signup__link > button {
     border: none;
     background-color: white;

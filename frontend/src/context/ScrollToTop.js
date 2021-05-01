@@ -7,9 +7,9 @@ const ScrollToTop = ({ history }) => {
             window.scrollTo(0, 0);
         });
         return () => unlisten();
-    }, [history])
+    }, [history]);
 
-    return (null)
-}
+    return null;
+};
 
 export default withRouter(ScrollToTop);
