@@ -3,21 +3,21 @@ import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { enGB } from 'date-fns/locale';
 import { DateRangePicker, START_DATE, END_DATE } from 'react-nice-dates';
-import 'react-nice-dates/build/style.css';
 import { RiStarSFill as Star } from "react-icons/ri";
 import LoginModal from "../LoginFormModal/LoginFormModal";
+import { storeNewBooking } from '../../store/booking';
+import 'react-nice-dates/build/style.css';
 import "./BookingForm.css";
 import "../LoginFormModal/LoginForm.css";
-import { storeNewBooking } from '../../store/booking';
 
 const BookingForm = ({ listing, userId }) => {
     const [startDate, setStartDate] = useState();
     const [endDate, setEndDate] = useState();
     const [num_guests, setNumGuests] = useState(1);
-    const [focus, setFocus] = useState(START_DATE)
+    const [focus, setFocus] = useState(START_DATE);
     const handleFocusChange = newFocus => {
-        setFocus(newFocus || START_DATE)
-    }
+        setFocus(newFocus || START_DATE);
+    };
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
     const history = useHistory();
@@ -26,7 +26,7 @@ const BookingForm = ({ listing, userId }) => {
         setStartDate();
         setEndDate();
         setNumGuests(1);
-    }
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -37,7 +37,7 @@ const BookingForm = ({ listing, userId }) => {
             check_in: startDate,
             check_out: endDate,
             num_guests: Number(num_guests)
-        }
+        };
 
         // using redux to store the potential booking
         dispatch(storeNewBooking(newBooking));
@@ -46,8 +46,8 @@ const BookingForm = ({ listing, userId }) => {
         // only redirect to bookings if user is logged in
         if (sessionUser) {
             history.push(`/bookings`);
-        }
-    }
+        };
+    };
 
     return (
         <div className="booking___form">

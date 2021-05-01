@@ -38,10 +38,16 @@
     height: 38px;
     width: 140px;
     border: none;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 600;
     outline-width: 0;
     align-self: flex-end;
+}
+
+.booking__trips-top button:hover {
+    background-color: #e60730;
+    cursor: pointer;
+
 }
 
 .booking__trips-top p {

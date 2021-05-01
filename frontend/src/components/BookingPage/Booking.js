@@ -7,17 +7,18 @@ import { getListingById } from "../../store/listing";
 import { createBooking } from "../../store/booking";
 import RareFind from "../../images/rare-find.png";
 import differenceInCalendarDays from 'date-fns/differenceInCalendarDays';
-import { format } from "date-fns";
 import useConsumeContext from "../../context/LoginSignupModalContext";
+import { format } from "date-fns";
 import "./Booking.css";
 
 const Booking = () => {
+    const { setShowMenu } = useConsumeContext();
     const booking = useSelector(state => state.booking);
     const listing = useSelector(state => state.listing);
+    const sessionUser = useSelector(state => state.session.user);
+    const reviews = useSelector(state => state.review);
     const dispatch = useDispatch();
     const history = useHistory();
-    const { setShowMenu } = useConsumeContext();
-
     const host = listing?.User;
     const bed = listing?.num_beds;
     const bath = listing?.num_baths;
@@ -41,22 +42,16 @@ const Booking = () => {
     useEffect(() => {
         setShowMenu(false);
         dispatch(getListingById(Number(booking?.listing_id)));
-    }, [dispatch, booking.listing_id, setShowMenu])
+    }, [dispatch, booking.listing_id, setShowMenu]);
 
     const handleClick = (e) => {
         e.preventDefault();
        
         const createdBooking = dispatch(createBooking(booking));
         if (createdBooking) {
-            history.push("/");
+            history.push(`/users/${sessionUser.id}`);
         }
     }
-
-    // listing_id: Number(listing?.id),
-    //     user_id: Number(userId),
-    //         check_in: startDate,
-    //             check_out: endDate,
-    //                 num_guests: Number(num_guests)
 
     return (
         <>
@@ -119,7 +114,7 @@ const Booking = () => {
                                             <span><Star className="booking__star" /></span>
                                             <span className="booking__rating">{`${listing?.rating}`}</span>
                                             <span>・</span>
-                                            <span className="booking__reviews">{`(Total reviews)`}</span>
+                                            <span>{reviews?.length > 1 ? `(${reviews?.length} reviews)` : `(${reviews?.length} review)`}</span>
                                         </div>
                                     </div>
                                 </div>

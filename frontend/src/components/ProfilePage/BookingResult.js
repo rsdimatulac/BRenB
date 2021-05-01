@@ -1,12 +1,14 @@
-// import { useSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { RiStarSFill as Star } from "react-icons/ri";
 import { parseISO, format, differenceInCalendarDays } from "date-fns";
+import { cancelBooking } from "../../store/booking";
 import "./BookingResult.css";
 
+
 const BookingResult = ({ booking }) => {
-    // const listing = useSelector(state => state.listing);
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
+    const reviews = useSelector(state => state.review);
     const checkIn = format(parseISO(booking?.check_in), "MMMM dd, yyyy");
     const checkOut = format(parseISO(booking?.check_out), "MMMM dd, yyyy");
     const city = booking?.Listing.city;
@@ -25,9 +27,14 @@ const BookingResult = ({ booking }) => {
     // TODO: Fix the image order
     const listingImage = booking?.Listing.Images[1].url;
     const listingId = booking.Listing.id;
-    console.log(listingId)
 
     // GET REVIEWS
+
+    // cancel booking
+    const handleClick = (e) => {
+        e.preventDefault();
+        return dispatch(cancelBooking(Number(booking.id)));
+    };
 
     return (
         <div className="booking__tile-container">
@@ -43,7 +50,7 @@ const BookingResult = ({ booking }) => {
                         <span>{booking_guests > 1 ? `${booking_guests} guests` : `${booking_guests} guest`}</span>
                     </h4>
                 </div>
-                <button>Cancel booking</button>
+                <button onClick={handleClick}>Cancel booking</button>
                 <p>Total cost: ${total}</p>
             </div>
             <div className="booking__tile-bottom">
@@ -66,6 +73,7 @@ const BookingResult = ({ booking }) => {
                             <div>
                                 <span><Star className="star__icon-booking"/></span>
                                 <span>{rating}</span>
+                                <span>{reviews?.length > 1 ? `(${reviews?.length} reviews)` : `(${reviews?.length} review)`}</span>
                             </div>
                             <h2>${price} / night</h2>
                         </div>

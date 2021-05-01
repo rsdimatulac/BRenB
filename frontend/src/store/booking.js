@@ -3,6 +3,7 @@ import { csrfFetch } from './csrf';
 const ADD_BOOKING = "booking/ADD";
 const STORE_BOOKING = "booking/STORE";
 const GET_BOOKING = "booking/GET";
+const DELETE_BOOKING = "booking/DELETE";
 
 /////////////////// ACTION CREATORS ////////////////////
 
@@ -19,6 +20,11 @@ const newBooking = booking => ({
 const getBooking = (booking) => ({
     type: GET_BOOKING,
     booking
+});
+
+const deleteBooking = (bookingId) => ({
+    type: DELETE_BOOKING,
+    bookingId
 });
 
 //////////////// THUNK ACTION CREATORS ////////////////////
@@ -52,6 +58,17 @@ export const getBookings = (userId) => async (dispatch) => {
     };
 }
 
+export const cancelBooking = (bookingId) => async (dispatch) => {
+    const response = await csrfFetch(`/api/bookings/${bookingId}`, {
+        method: "DELETE"
+    });
+
+    if (response.ok) {
+        const bookingId = await response.json();
+        dispatch(deleteBooking(bookingId));
+    };
+}
+
 /////////////////////// REDUCER //////////////////////////
 
 const initialState = {};
@@ -64,6 +81,10 @@ const bookingReducer = (state = initialState, action) => {
             return action.booking;
         case GET_BOOKING:
             return action.booking;
+        case DELETE_BOOKING:
+            const newState = { ...state }
+            delete newState[action.bookingId]
+            return newState;
         default:
             return state;
     }

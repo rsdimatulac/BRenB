@@ -35,9 +35,13 @@ const LoginForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setErrors([]);
-        setShowSignUp(false);
-        setShowLogin(false);
-        setShowMenu(false);
+        
+        if (!errors) {
+            setShowSignUp(false);
+            setShowLogin(false);
+            setShowMenu(false);
+        };
+
         return dispatch(sessionActions.login({ credential, password }))
             .catch(async (res) => {
                 const data = await res.json();
