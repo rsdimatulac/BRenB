@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { format, parseISO } from "date-fns";
 import { MdHome as Home } from "react-icons/md";
@@ -9,7 +9,6 @@ import { FaCheck as Check } from "react-icons/fa";
 import { getBookings } from "../../store/booking";
 import BookingResult from "./BookingResult";
 import useConsumeContext from "../../context/LoginSignupModalContext";
-// import { getReviews } from "../../store/review";
 import "./Profile.css";
 
 
@@ -19,13 +18,17 @@ const Profile = () => {
     const joinedDate = format(parseISO(sessionUser?.createdAt), "yyyy");
     const dispatch = useDispatch();
     const bookings = useSelector(state => state.booking);
-    // const reviews = useSelector(state => state.review);
+
+    const [bookingsLength, setBookingsLength] = useState(bookings?.length);
     
     useEffect(() => {
         setShowMenu(false);
-        // dispatch(getReviews(Number(listingId)));
         dispatch(getBookings(sessionUser?.id));
-    }, [dispatch, sessionUser?.id, setShowMenu])
+    }, [dispatch, sessionUser?.id, setShowMenu, bookingsLength]);
+
+    useEffect(() => {
+        setBookingsLength(bookings?.length)
+    }, [bookings?.length]);
 
     return (
         <div className="profile__container">
@@ -77,7 +80,7 @@ const Profile = () => {
                     </div>
                 </div>
                 <div className="all__bookings-container">
-                    <h2>Upcoming trips</h2>
+                    {bookings?.length > 0 ? <h2>Upcoming trips</h2> : <h2>No upcoming trips</h2>}
                     {Array.from(bookings)?.map(booking => <BookingResult booking={booking} key={booking.id}/>)}
                 </div>
             </div>

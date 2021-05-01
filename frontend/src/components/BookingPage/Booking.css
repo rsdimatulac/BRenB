@@ -154,6 +154,11 @@
     outline-width: 0;
 }
 
+.confirm__pay-button > button:hover {
+    background-color: #e60730;
+    cursor: pointer;
+}
+
 .booking__total-container {
     padding-left: 80px;
 }

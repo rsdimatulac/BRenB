@@ -76,6 +76,11 @@ input::placeholder {
     outline-width: 0;
 }
 
+.reserve__button:hover {
+    background-color: #e60730;
+    cursor: pointer;
+}
+
 .reserve__message {
     font-size: 14px;
     align-self: center;

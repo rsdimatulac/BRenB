@@ -13,9 +13,9 @@ import { GiForkKnifeSpoon as Kitchen } from "react-icons/gi";
 import { FaRegSnowflake as Aircon } from  "react-icons/fa";
 import { FiMonitor as TV } from "react-icons/fi";
 import { FaFireExtinguisher as FireExt } from "react-icons/fa";
+import { format, parseISO } from "date-fns";
 import { getListingById } from "../../store/listing";
 import { getReviews } from "../../store/review";
-import { format, parseISO } from "date-fns";
 import BookingForm from "./BookingForm"; 
 import useConsumeContext from "../../context/LoginSignupModalContext";
 import './Show.css';
@@ -26,10 +26,6 @@ const ShowPage = () => {
     const listing = useSelector(state => state.listing);
     const reviews = useSelector(state => state.review);
     const { setShowMenu } = useConsumeContext();
-
-    // console.log(parseISO(reviews[0]?.createdAt))
-    // console.log(format(parseISO(reviews[0]?.createdAt), "MMMM yyyy"))
-
     const dispatch = useDispatch();
 
     const imagesArray = listing?.Images;
@@ -58,7 +54,6 @@ const ShowPage = () => {
                         <span><Star className="rating__star" /></span>
                         <span className="listing__rating">{`${listing?.rating}`}</span>
                         <span>・</span>
-                        {/* <span className="listing__reviews">{reviews?.length > 1 ? `${reviews?.length} reviews` : `${reviews?.length} review`}</span> */}
                         <span className="listing__reviews"><a href="#reviews" style={{ textDecoration: "none", color: "inherit" }}>{reviews?.length > 1 ? `(${reviews?.length} reviews)` : `(${reviews?.length} review)`}</a></span>
                         <span>・</span>
                         <span className="listing__location">{`${listing?.city}, ${listing?.state}, United States`}</span>
@@ -102,8 +97,7 @@ const ShowPage = () => {
                     <div className="rules__icon info__icon"><Rules /></div>
                     <div className="rules info__text">
                         <h1>House Rules</h1>
-                        <p>The host doesn’t allow parties, or smoking.</p>
-                        {/*The host has set some house rules, which you'll be asked to agree to when you book.*/}
+                        <p>The host doesn’t allow parties or smoking.</p>
                     </div>
                 </div>
                 <div className="listing__description">

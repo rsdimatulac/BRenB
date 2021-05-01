@@ -7,7 +7,8 @@ const router = express.Router();
 // GET /api/listings/:id <<--- Get the listing by its ID
 router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
     const listingId = parseInt(req.params.id, 10);
-    const listing = await Listing.findByPk(listingId, { include: [User, Image] });
+    const listing = await Listing.findByPk(listingId, 
+        { include: [User, Image] });
     return res.json(listing);
 }));
 

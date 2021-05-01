@@ -1,7 +1,6 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
-const { requireAuth } = require('../../utils/auth');
-const { Booking, Listing, Image, Review } = require("../../db/models")
+const { Booking, Listing, Image } = require("../../db/models");
 
 const router = express.Router();
 
@@ -40,6 +39,16 @@ router.post('/bookings', asyncHandler(async (req, res) => {
     });
 
     return res.json(newBooking);
+}));
+
+// DELETE /api/bookings/:id
+router.delete('/bookings/:id(\\d+)', asyncHandler(async (req, res) => {
+    const bookingId = parseInt(req.params.id, 10);
+    console.log("BACKEND", bookingId)
+    const booking = await Booking.findByPk(bookingId);
+    await booking.destroy();
+
+    return res.json(bookingId);
 }));
 
 module.exports = router;
