@@ -2,13 +2,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 464px;
+    height: 484px;
     width: 528px;
 }
 
 .error__validation {
-    padding-left: 10px;
+    /* padding-left: 10px; */
     font-style: italic;
+    font-size: 12px;
 }
 
 .form__container-signup {
@@ -16,7 +17,7 @@
     width: 484px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     box-sizing: border-box;
     padding: 20px;
 }
