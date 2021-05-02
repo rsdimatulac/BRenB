@@ -57,19 +57,11 @@ html {
 .listing__image {
     grid-area: 2 / 1 / 3 / 13;
     height: 650px;
-    /* width: 1265px; */
     overflow: hidden;
     border-radius: 20px;
     display: flex;
     align-items: flex-end;
-}
-
-.listing__image > img {
-    width: 1265px;
-    /* width: 80%; */
-    object-fit: contain;
-    text-align: center;
-    display: block;
+    justify-content: center;
 }
 
 .listing__features {

@@ -18,6 +18,7 @@ import { getListingById } from "../../store/listing";
 import { getReviews } from "../../store/review";
 import BookingForm from "./BookingForm"; 
 import useConsumeContext from "../../context/LoginSignupModalContext";
+import ImageSlider from "./ImageSlider";
 import './Show.css';
 
 const ShowPage = () => {
@@ -60,7 +61,7 @@ const ShowPage = () => {
                     </div>
                 </div>
                 <div className="listing__image">
-                    <img src={imagesArray ? imagesArray[0].url : null} alt="" />
+                    <ImageSlider imagesArray={imagesArray} />
                 </div>
                 <div className="listing__features">
                     <div className="description__info">
