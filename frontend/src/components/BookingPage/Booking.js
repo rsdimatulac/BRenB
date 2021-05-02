@@ -24,18 +24,18 @@ const Booking = () => {
     const bath = listing?.num_baths;
     const imagesArray = listing?.Images;
     const guest = booking?.num_guests;
-    const startDate = format(booking.check_in, "MMM dd");
-    const endDate = format(booking.check_out, "dd, yyyy");
+    const startDate = format(booking.check_in, "MMM dd, yyyy");
+    const endDate = format(booking.check_out, "MMM dd, yyyy");
     const num_nights = differenceInCalendarDays(booking.check_out, booking.check_in);
     let price = (listing?.price * num_nights);
     const cleaning = 27.00;
     const service = 16.94;
     const taxes = ((price + cleaning + service) * 0.13).toLocaleString(undefined, { maximumFractionDigits: 2 });
-    const total = (price + cleaning + service + Number(taxes)).toLocaleString(undefined, { maximumFractionDigits: 2 });
+    const total = (price + cleaning + service + parseFloat(taxes)).toLocaleString(undefined, { maximumFractionDigits: 2 });
     
     // converting back to currency format
     price = new Intl.NumberFormat().format(price);
-
+    
     // add booking total, converting the total to float/number type
     booking.total_cost = parseFloat(total.split(",").join(""));
 

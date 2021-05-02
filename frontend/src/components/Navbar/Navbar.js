@@ -20,7 +20,6 @@ const Navbar = ({ isLoaded }) => {
     console.log("PATHHH", window.location.pathname)
     
     // what triggers the navbar style change
-    // if (window.location.pathname !== "/") {
     window.onscroll = function () {
         if (window.pageYOffset > 0) {
             setLogo(Logo);
@@ -30,7 +29,6 @@ const Navbar = ({ isLoaded }) => {
             setDark("dark");
         };
     };
-    // } 
 
     const handleClick = () => {
         history.push("/search");
