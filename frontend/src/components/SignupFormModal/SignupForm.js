@@ -38,6 +38,11 @@ function SignupFormPage() {
             });
     };
 
+    const handleModalClickLogin = () => {
+        setShowLogin(true);
+        setShowSignUp(false);
+    }
+
     return (
         <div className="signup__container">
             <form onSubmit={handleSubmit} className="form__container-signup">
@@ -89,8 +94,8 @@ function SignupFormPage() {
                     required
                     placeholder="Confirm password"
                 />
-                <button className="signup__button" type="submit">Sign Up</button>
-                <div className="login__link">Have an account?<span id="login__link"><Login/></span></div>
+                <button className="signup__button">Sign Up</button>
+                <div className="login__link">Have an account?<span onClick={handleModalClickLogin} id="login__link">Login</span></div>
             </form>
         </div>
     );

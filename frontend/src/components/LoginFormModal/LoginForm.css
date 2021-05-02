@@ -59,15 +59,14 @@ input::placeholder {
     cursor: pointer;
 }
 
-#signup__link > button {
-    border: none;
-    background-color: white;
+#signup__link {
     font-size: 14px;
     color: #222222;
     font-weight: bold;
+    padding-left: 5px;
 }
 
-#signup__link > button:hover {
+#signup__link:hover {
     text-decoration: underline;
 }
 

@@ -66,15 +66,14 @@ input::placeholder {
 }
 
 
-#login__link > button {
-    border: none;
-    background-color: white;
+#login__link {
     font-size: 14px;
     color: #222222;
     font-weight: bold;
+    padding-left: 5px;
 }
 
-#login__link > button:hover {
+#login__link:hover {
     text-decoration: underline;
 }
 

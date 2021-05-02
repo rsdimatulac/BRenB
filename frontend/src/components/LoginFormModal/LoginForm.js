@@ -49,6 +49,11 @@ const LoginForm = () => {
             });
     };
 
+    const handleModalClickSignUp = () => {
+        setShowLogin(false);
+        setShowSignUp(true);
+    }
+
     return (
         <div className="login__container">
             <form onSubmit={handleSubmit} className="form__container">
@@ -70,9 +75,9 @@ const LoginForm = () => {
                     required
                     placeholder="Password"
                 />
-                <button className="login__buttons" type="submit">Login</button>
+                <button className="login__buttons">Login</button>
                 <button className="login__buttons" onClick={loginGuest}>Login as Guest</button>
-                <div className="signup__link">Don't have an account?<span id="signup__link"><SignUp/></span></div>
+                <div className="signup__link">Don't have an account?<span onClick={handleModalClickSignUp} id="signup__link">Sign Up</span></div>
             </form>
         </div>
     );
