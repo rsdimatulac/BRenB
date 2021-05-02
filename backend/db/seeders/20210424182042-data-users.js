@@ -105,6 +105,96 @@ module.exports = {
         bio: 'CEO of Apple.',
         createdAt: faker.date.between('2016-11-27', '2021-05-03')
       },
+      { // 12
+        firstName: 'Susan',
+        lastName: 'Wojcicki',
+        email: 'susanwojcicki@gmail.com',
+        username: 'susanwojcicki',
+        hashedPassword: bcrypt.hashSync('Youtube1!'),
+        avatar: "https://brenb.s3.amazonaws.com/avatars/user-12.jpg",
+        bio: "CEO of YouTube. I'm the writer of 'How To Break up the Silicon Valley Boys' Club'.",
+        createdAt: faker.date.between('2016-11-27', '2021-05-03')
+      },
+      { // 13
+        firstName: 'Lisa',
+        lastName: 'Su',
+        email: 'lisasu@gmail.com',
+        username: 'lisasuamd',
+        hashedPassword: bcrypt.hashSync('LisaAMD1!'),
+        avatar: "https://brenb.s3.amazonaws.com/avatars/user-13.jpg",
+        bio: 'President and CEO of AMD. Best host in town!',
+        createdAt: faker.date.between('2016-11-27', '2021-05-03')
+      },
+      { // 14
+        firstName: 'Margaret',
+        lastName: 'Keane',
+        email: 'margaretkeane@gmail.com',
+        username: 'margaretkeane',
+        hashedPassword: bcrypt.hashSync('Synchrony1!'),
+        avatar: "https://brenb.s3.amazonaws.com/avatars/user-14.jpg",
+        bio: "CEO of Synchrony Financial. I'm the kind of host who'll bake you cookies.",
+        createdAt: faker.date.between('2016-11-27', '2021-05-03')
+      },
+      { // 15
+        firstName: 'Safra',
+        lastName: 'Catz',
+        email: 'safracatz@gmail.com',
+        username: 'safracatz',
+        hashedPassword: bcrypt.hashSync('Oracle1!'),
+        avatar: "https://brenb.s3.amazonaws.com/avatars/user-15.jpg",
+        bio: 'CEO of Oracle.',
+        createdAt: faker.date.between('2016-11-27', '2021-05-03')
+      },
+      { // 16
+        firstName: 'Carol',
+        lastName: 'Tomé',
+        email: 'caroltome@gmail.com',
+        username: 'caroltome',
+        hashedPassword: bcrypt.hashSync('UPSups1!'),
+        avatar: "https://brenb.s3.amazonaws.com/avatars/user-16.jpg",
+        bio: 'CEO of UPS. No downs, only UPS.',
+        createdAt: faker.date.between('2016-11-27', '2021-05-03')
+      },
+      { // 17
+        firstName: 'Kevin',
+        lastName: 'Systrom',
+        email: 'kevinsystrom@gmail.com',
+        username: 'kevinsystrom',
+        hashedPassword: bcrypt.hashSync('Instagram1!'),
+        avatar: "https://brenb.s3.amazonaws.com/avatars/user-17.jpg",
+        bio: 'Founder of Instagram. Rent my place and mention me on IG!',
+        createdAt: faker.date.between('2016-11-27', '2021-05-03')
+      },
+      { // 18
+        firstName: 'Reshma',
+        lastName: 'Saujani',
+        email: 'reshmasaujani@gmail.com',
+        username: 'reshmasaujani',
+        hashedPassword: bcrypt.hashSync('GirlsWhoCode1!'),
+        avatar: "https://brenb.s3.amazonaws.com/avatars/user-18.png",
+        bio: 'CEO of Girls Who Code. Need more women in tech! But first, rent my place.',
+        createdAt: faker.date.between('2016-11-27', '2021-05-03')
+      },
+      { // 19
+        firstName: 'Kimberly',
+        lastName: 'Bryant',
+        email: 'kimberlybryant@gmail.com',
+        username: 'kimberlybryant',
+        hashedPassword: bcrypt.hashSync('BlackGirlsCode1!'),
+        avatar: "https://brenb.s3.amazonaws.com/avatars/user-19.jpg",
+        bio: 'Founder and CEO of Black Girls Code.',
+        createdAt: faker.date.between('2016-11-27', '2021-05-03')
+      },
+      { // 20
+        firstName: 'Ryan',
+        lastName: 'Roslansky',
+        email: 'ryanroslansky@gmail.com',
+        username: 'ryanroslansky',
+        hashedPassword: bcrypt.hashSync('LinkedIn1!'),
+        avatar: "https://brenb.s3.amazonaws.com/avatars/user-20.jpeg",
+        bio: 'CEO of LinkedIn. Get connected and rent my home!',
+        createdAt: faker.date.between('2016-11-27', '2021-05-03')
+      },
     ]);
   },
 

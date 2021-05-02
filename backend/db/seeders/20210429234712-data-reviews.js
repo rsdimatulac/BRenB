@@ -184,7 +184,187 @@ module.exports = {
         listing_id: 10,
         review: "Great place. Would love to stay here again. Tim was an exceptional host! I hope he gives me the new iPhone because of this review.",
         createdAt: faker.date.between('2020-11-27', '2021-05-03')
-      }
+      },
+      {
+        user_id: 7,
+        listing_id: 11,
+        review: "Beautiful condo right near the waterfront. All the amenities of home and within walking distance to Pike’s Market and the wharf. Excellent location! I definitely recommend Susan’s place!",
+        createdAt: faker.date.between('2020-01-01', '2021-05-03')
+      },
+      {
+        user_id: 8,
+        listing_id: 11,
+        review: "Everything was great! Susan was so quick to answer all questions and even provided tips for things to see and do. Would definitely stay here again! Great location to so many Seattle attractions. Thank you for everything!!",
+        createdAt: faker.date.between('2020-01-01', '2021-05-03')
+      },
+      {
+        user_id: 9,
+        listing_id: 11,
+        review: "Great host! Extremely accommodating, goes above and beyond the expectations of host. Quick responses and great communication. Prime location for anyone trying to get a feel for Seattle. Located near the water with main attractions close by. Unit was as host described. Would recommend.",
+        createdAt: faker.date.between('2020-01-01', '2021-05-03')
+      },
+      {
+        user_id: 10,
+        listing_id: 12,
+        review: "Can’t beat the location - green lake is perfect neighborhood to stay and relax plus get to anywhere in Seattle. Thanks for a cozy comfortable home!",
+        createdAt: faker.date.between('2020-01-01', '2021-05-03')
+      },
+      {
+        user_id: 11,
+        listing_id: 12,
+        review: "An amazing property in an amazing city. Especially loved that we could walk to the grocery store and Uber virtually anywhere. Great hosts who were very accommodating and would definitely stay again.",
+        createdAt: faker.date.between('2020-01-01', '2021-05-03')
+      },
+      {
+        user_id: 14,
+        listing_id: 12,
+        review: "This home was perfectly clean and spacious! There was a chalkboard in the kitchen with recommendations for restaurants and activities nearby. The Green Lake neighborhood is a beautiful place to stay in and I would recommend this home to anyone.",
+        createdAt: faker.date.between('2020-01-01', '2021-05-03')
+      },
+      {
+        user_id: 15,
+        listing_id: 13,
+        review: "Margaret’s place was great! Me and my husband enjoyed our stay for his birthday, it’s stylish, close to everything in the city from food to shopping. And everything was needed for our stay will definitely stay again and suggest if your looking for a romantic getaway to book!",
+        createdAt: faker.date.between('2020-01-01', '2021-05-03')
+      },
+      {
+        user_id: 13,
+        listing_id: 13,
+        review: "The loft was meticulously decorated and was a treat to stay at. The lighting was incredible and the blinds/shades that come down from the ceiling were so nice for privacy. Margaret was incredibly helpful and detailed in his communication. I’d highly recommend staying here.",
+        createdAt: faker.date.between('2020-01-01', '2021-05-03')
+      },
+      {
+        user_id: 16,
+        listing_id: 13,
+        review: "Great place! we loved our stay! in the heart of everything, tons withinh walking distance or 5-10 min drive. nice decor and lovely place to stay! definitely will come again if we come back Seattle!",
+        createdAt: faker.date.between('2020-01-01', '2021-05-03')
+      },
+      {
+        user_id: 14,
+        listing_id: 14,
+        review: "The perfect Sirbnb, private and quiet yet close to everything. Safra was very helpful and attentive but not overbearing. The place was clean and had everything we needed. I would definitely stay here again!",
+        createdAt: faker.date.between('2020-01-01', '2021-05-03')
+      },
+      {
+        user_id: 17,
+        listing_id: 14,
+        review: "Very charming, detailed oriented, and clean space with a beautiful garden in an excellent location/neighborhood. Easy parking. Walkable to great restaurants and the best ice cream shop. Plus the delicious homemade granola added the special touch. Definitely would return.",
+        createdAt: faker.date.between('2020-01-01', '2021-05-03')
+      },
+      {
+        user_id: 18,
+        listing_id: 14,
+        review: "We had a wonderful time at the city garden retreat. It was a cozy oasis in the middle of the big city. Safra is an excellent host that made us feel right at home. The apartment was clean and inviting and had everything we needed to enjoy our stay. We will definitely be back!!",
+        createdAt: faker.date.between('2020-01-01', '2021-05-03')
+      },
+      {
+        user_id: 19,
+        listing_id: 15,
+        review: "Great location, amazing view and very clean and equipped. Highly recommend.",
+        createdAt: faker.date.between('2020-01-01', '2021-05-03')
+      },
+      {
+        user_id: 20,
+        listing_id: 15,
+        review: "Great location!! Everything was really in walking distance with a lot of great food options. The place itself was very clean and quite. Communication was great and they even let me check in early!",
+        createdAt: faker.date.between('2020-01-01', '2021-05-03')
+      },
+      {
+        user_id: 2,
+        listing_id: 15,
+        review: "This place was great! Perfect stay for my needs. Carol was always very responsive and so helpful whenever we needed something. The place is spacious and has a great view of the Space anwedle and the mountains! Bed is super comfy and everything is very modern and beautiful! Definitely recommend!",
+        createdAt: faker.date.between('2020-01-01', '2021-05-03')
+      },
+      {
+        user_id: 3,
+        listing_id: 16,
+        review: "We truly enjoyed our stay. Kevin is a wonderful host. He pays attention to detail and goes above and beyond to accommodate needs. It is comfy and stylish and conveniently located. We plan to stay here again in the future.",
+        createdAt: faker.date.between('2020-01-01', '2021-05-03')
+      },
+      {
+        user_id: 4,
+        listing_id: 16,
+        review: "Kevin's place is beautiful and clean close to great destinations in Seattle. He gives recommendations on good places to go in the city. Excellent very nice & helpful host.",
+        createdAt: faker.date.between('2020-01-01', '2021-05-03')
+      },
+      {
+        user_id: 5,
+        listing_id: 16,
+        review: "We stayed here for 3 nights and it was a great stay! The location is right in Belltown so we were about a 15 minute walk from all our destinations or an easy 15 min drive from some of the farther spots like Capitol Hill.",
+        createdAt: faker.date.between('2020-01-01', '2021-05-03')
+      },
+      {
+        user_id: 6,
+        listing_id: 17,
+        review: "Enjoyed my stay! Really nice place.",
+        createdAt: faker.date.between('2020-01-01', '2021-05-03')
+      },
+      {
+        user_id: 7,
+        listing_id: 17,
+        review: "The host is great, very responsive. The views are amazing. Would stay here again!",
+        createdAt: faker.date.between('2020-01-01', '2021-05-03')
+      },
+      {
+        user_id: 8,
+        listing_id: 17,
+        review: "This place is close to everything. Definitely located in the hear of Seattle. I highly recommend this home. ",
+        createdAt: faker.date.between('2020-01-01', '2021-05-03')
+      },
+      {
+        user_id: 9,
+        listing_id: 18,
+        review: "Amazing place to stay!! So lovely and after a long day / flight there was some food and snacks in the kitchen which just made everything so much better. Would highly recommend!! And the fireplace was so cozy",
+        createdAt: faker.date.between('2020-01-01', '2021-05-03')
+      },
+      {
+        user_id: 10,
+        listing_id: 18,
+        review: "We stayed 3 nights at this quiet, private Airbnb and had a great experience. The location is perfect, it is close to shopping and restaurants but is also set in a quite neighborhood with private access. The accommodations were very nice, very nicely maintained with everything we needed. I would definitely recommend this to anyone and would definitely stay here again.",
+        createdAt: faker.date.between('2020-01-01', '2021-05-03')
+      },
+      {
+        user_id: 11,
+        listing_id: 18,
+        review: "The place WAS AWESOME! Would definitely stay again!",
+        createdAt: faker.date.between('2020-01-01', '2021-05-03')
+      },
+      {
+        user_id: 12,
+        listing_id: 19,
+        review: "I really enjoyed staying here. The place was great. Exactly what I needed for a month. Clean, well kept and it was a pleasure to stay here. I would strong recommend.",
+        createdAt: faker.date.between('2020-01-01', '2021-05-03')
+      },
+      {
+        user_id: 9,
+        listing_id: 19,
+        review: "The place is fully-equipped. Ryan did an awesome job designing this home. 5 stars!",
+        createdAt: faker.date.between('2020-01-01', '2021-05-03')
+      },
+      {
+        user_id: 15,
+        listing_id: 19,
+        review: "What a beautifully designed space in a lovely building with a stunning view. Oh, and the location is PERFECT too!",
+        createdAt: faker.date.between('2020-01-01', '2021-05-03')
+      },
+      {
+        user_id: 14,
+        listing_id: 20,
+        review: "I am a frequent Seattle visitor and felt very comfortable in a scenic space with a caring and accessible host. I would happily stay again!",
+        createdAt: faker.date.between('2020-01-01', '2021-05-03')
+      },
+      {
+        user_id: 16,
+        listing_id: 20,
+        review: "This is a great spot with awesome skyline views and was near many great coffee shops. The place itself was full of character and really well designed.",
+        createdAt: faker.date.between('2020-01-01', '2021-05-03')
+      },
+      {
+        user_id: 17,
+        listing_id: 20,
+        review: "I am a frequent Seattle visitor and felt very comfortable in a scenic space with a caring and accessible host. I would happily stay again!",
+        createdAt: faker.date.between('2020-01-01', '2021-05-03')
+      },
     ]);
   },
 

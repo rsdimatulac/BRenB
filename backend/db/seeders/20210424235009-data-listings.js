@@ -153,6 +153,156 @@ module.exports = {
         longitude: -122.35797,
         rating: 5.0
       },
+      { // 11
+        title: 'Waterfront Condo in Seattle. A Rare Find!',
+        description: "Over 1000 square feet of relaxing, well equipped perfection nestled at the base of Pike Place Market, across the street from the Seattle Aquarium and Pier 62. Finished in a decor reminiscent of Seattle's early days, with red-brick accent walls, esspresso wood floors, and subway tiled bathroom.",
+        type: 'Entire condominium',
+        host_id: 12, // Susan Wojcicki
+        price: 243,
+        num_guests: 4,
+        num_beds: 1,
+        num_baths: 1,
+        city: 'Seattle',
+        state: 'Washington',
+        latitude: 47.60888,
+        longitude: -122.3437,
+        rating: 5.0
+      },
+      { // 12
+        title: 'Greenlake Craftsman Home with Hot Tub & Garden',
+        description: "Our beautifully maintained 3 bedroom, 2 bath craftsman home is in one of Seattle's most desirable neighborhoods. It is nestled in a quiet and residential area of Greenlake and is a few blocks from the popular Green Lake Park and many restaurants, cafes, and shops. The University of Washington and Woodland Park Zoo are close by.Enjoy the privacy of our large fenced backyard with hot tub, gas fire pit, and eat-in patio and BBQ. The large open concept kitchen is fully equipped with every amenity.",
+        type: 'Entire house',
+        host_id: 13, // Lisa Su
+        price: 390,
+        num_guests: 6,
+        num_beds: 3,
+        num_baths: 2,
+        city: 'Seattle',
+        state: 'Washington',
+        latitude: 47.66643,
+        longitude: -122.33618,
+        rating: 5.0
+      },
+      { // 13
+        title: 'Art-Filled Industrial Loft in South Lake Union',
+        description: 'Admire modern art throughout a chic loft flooded with natural light courtesy of double height floor-to-ceilings windows. Polished concrete floors, walnut cabinetry, access to a patio and roof deck, and more—enjoy this unique and luxurious retreat.',
+        type: 'Entire loft',
+        host_id: 14, // Margaret Keane
+        price: 120,
+        num_guests: 4,
+        num_beds: 1,
+        num_baths: 1.5,
+        city: 'Seattle',
+        state: 'Washington',
+        latitude: 47.62171,
+        longitude: -122.33888,
+        rating: 4.97
+      },
+      { // 14
+        title: 'City Garden Retreat in Vibrant Walkable Neighborhood',
+        description: "Step down into this peaceful lower level apartment surrounded by lush greenery. Discover a calming retreat featuring a private entrance, an open-plan living area, modern furnishings, and a unique stonework patio. Stroll the tree lined streets with spectacular city views and explore the neighborhood's easy access to parks, restaurants, a full grocery store and shops all within walking distance.",
+        type: 'Entire apartment',
+        host_id: 15, // Safra Cruz
+        price: 117,
+        num_guests: 3,
+        num_beds: 2,
+        num_baths: 1,
+        city: 'Seattle',
+        state: 'Washington',
+        latitude: 47.65735,
+        longitude: -122.33903,
+        rating: 4.99
+      },
+      { // 15
+        title: 'Capitol Hill home with great views',
+        description: 'This top floor, spacious, light-filled one bedroom apartment is in a perfect location on Capitol Hill. From the living room there is a peekaboo view of the Space Needle, the Seattle skyline and on a clear day, the water and mountain range. New, modern décor in a completely renovated one bedroom flat. Luxurious linens on a 5 star hotel-quality bed, along with tasteful furnishings make this the perfect getaway.',
+        type: 'Entire apartment',
+        host_id: 16, // Carol Tome
+        price: 129,
+        num_guests: 4,
+        num_beds: 1,
+        num_baths: 1,
+        city: 'Seattle',
+        state: 'Washington',
+        latitude: 47.62242,
+        longitude: -122.32515,
+        rating: 4.75
+      },
+      { // 16
+        title: 'Belltown Studio close to Space Needle',
+        description: 'Cook seafood from the Pike Place Market in the well-stocked galley kitchen, with its Whirlpool appliances. Stay in shape without leaving the building, thanks to an indoor pool, hot tub, and fitness room. BBQ on the rooftop overlooking Puget Sound. Washer and dryer inside the condo!',
+        type: 'Entire condominium',
+        host_id: 17, // Kevin Systrom
+        price: 155,
+        num_guests: 2,
+        num_beds: 1,
+        num_baths: 1,
+        city: 'Seattle',
+        state: 'Washington',
+        latitude: 47.61564,
+        longitude: -122.34781,
+        rating: 5.0
+      },
+      { // 17
+        title: 'City water view Oasis in the heart of Seattlt',
+        description: 'Enjoy the sunset while tasting wine and watching ferries go by on Puget Sound from your private balcony. You are close to everything while staying here. Let the heart of Seattle embrace you for what it can delightfully offer. Most of all, kick back and relax, enjoy the views, and have a great time!',
+        type: 'Entire condominium',
+        host_id: 18, // Reshma Saujani
+        price: 126,
+        num_guests: 4,
+        num_beds: 2,
+        num_baths: 1,
+        city: 'Seattle',
+        state: 'Washington',
+        latitude: 47.61449,
+        longitude: -122.34794,
+        rating: 4.96
+      },
+      { // 18
+        title: 'Colorful and Stylish Studio with a Private Garden',
+        description: 'Soak up the charm of this unique studio apartment fitted with stylish, contemporary furnishings and oodles of character. Morning coffee just seems to taste better in the lush, green garden or nuzzled in the cozy reading nook next to the fireplace.',
+        type: 'Entire guest suite',
+        host_id: 19, // Kimberly Bryant
+        price: 125,
+        num_guests: 2,
+        num_beds: 1,
+        num_baths: 1,
+        city: 'Seattle',
+        state: 'Washington',
+        latitude: 47.70861,
+        longitude: -122.3138,
+        rating: 4.98
+      },
+      { // 19
+        title: 'Bright Lower Queen Anne Studio w/ Gym',
+        description: 'Show up and start living from day one in Seattle with this stylish studio Blueground apartment. You’ll love coming home to this thoughtfully furnished, beautifully designed, and fully-equipped Belltown home with stunning views over the city.',
+        type: 'Entire apartment',
+        host_id: 20, // Ryan Roslansky
+        price: 128,
+        num_guests: 2,
+        num_beds: 1,
+        num_baths: 1,
+        city: 'Seattle',
+        state: 'Washington',
+        latitude: 47.61986,
+        longitude: -122.35501,
+        rating: 4.99
+      },
+      { // 20
+        title: 'Queen Anne Loft with Space Needle View',
+        description: "Take a moment to read the messages in the fun collection of art sketches hanging over the dining area. Floor-to-ceiling-windows ensure there's plentiful light, while nice touches include the letter and number textured 3D wall by the spiral staircase.",
+        type: 'Entire guest suite',
+        host_id: 9, // Bill Gates
+        price: 148,
+        num_guests: 2,
+        num_beds: 1,
+        num_baths: 1,
+        city: 'Seattle',
+        state: 'Washington',
+        latitude: 47.62633,
+        longitude: -122.35372,
+        rating: 4.99
+      },
     ]);
   },
 
