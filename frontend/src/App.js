@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
+import NavbarWhite from "./components/Navbar/NavbarWhite";
 import HomePage from "./components/HomePage/Home";
 import SearchPage from "./components/SearchPage/Search";
 import ShowPage from "./components/ShowPage/Show";
@@ -25,29 +26,34 @@ function App() {
   return (
     <>
       <LoginSignupModalProvider>
-        <Navbar isLoaded={isLoaded} />
         {isLoaded && (
           <Switch>
             <Route exact path="/">
+            <Navbar isLoaded={isLoaded} />
               <HomePage />
               <Footer />
             </Route>
             <Route path="/listings/:id(\d+)">
+              <NavbarWhite isLoaded={isLoaded} />
               <ShowPage />
               <Footer />
             </Route>
             <Route path="/bookings">
+              <NavbarWhite isLoaded={isLoaded} />
               <BookingPage />
               <Footer />
             </Route>
             <Route path="/search">
+              <NavbarWhite isLoaded={isLoaded} />
               <SearchPage />
             </Route>
             <Route path="/users/:id(\d+)">
+              <NavbarWhite isLoaded={isLoaded} />
               <ProfilePage />
               <Footer />
             </Route>
             <Route>
+              <NavbarWhite isLoaded={isLoaded} />
               <PageNotFound />
               <Footer />
             </Route>
