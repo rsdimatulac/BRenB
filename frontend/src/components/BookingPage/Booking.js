@@ -33,7 +33,7 @@ const Booking = () => {
     const taxes = ((price + cleaning + service) * 0.13).toLocaleString(undefined, { maximumFractionDigits: 2 });
     const total = (price + cleaning + service + Number(taxes)).toLocaleString(undefined, { maximumFractionDigits: 2 });
     
-    // converting it to currency, must stay here
+    // converting back to currency format
     price = new Intl.NumberFormat().format(price);
 
     // add booking total, converting the total to float/number type

@@ -1,54 +1,40 @@
-import { useState, useCallback, useRef } from "react";
+import { useCallback, useRef } from "react";
+import { useHistory } from "react-router-dom";
 import { GoogleMap, useLoadScript, Marker, InfoWindow } from "@react-google-maps/api";
-// import usePlacesAutocomplete, { getGeocode, getLatLng } from "use-places-autocomplete";
-// import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption } from "@reach/combobox";
-import { formatRelative } from "date-fns";
-// import "@reach/combobox/styles.css";
-// import mapStyles from "./mapStyles";
+import CustomMarker from "../../images/marker.png";
 
 const libraries = ["places"];
 const mapContainerStyle = {
-    height: "45.7vw",
+    height: "89.2vh"
 };
 
 const options = {
     disableDefaultUI: true,
     zoomControl: true,
+    mapTypeControl: true,
+    streetViewControl: true,
 };
 
 const center = { // Seattle
-    lat: 47.6062,
-    lng: -122.332069,
+    lat: 47.625305,
+    lng: -122.332182,
 };
 
-const GoogleMaps = () =>  {
+const GoogleMaps = ({ listings }) =>  {
     const { isLoaded, loadError } = useLoadScript({
         googleMapsApiKey: process.env.REACT_APP_GOOGLE_PLACES_API_KEY,
         libraries,
     });
 
-    const [markers, setMarkers] = useState([]);
-    const [selected, setSelected] = useState(null);
+    const history = useHistory()
 
-    const onMapClick = useCallback((e) => {
-        setMarkers((current) => [
-            ...current,
-            {
-                lat: e.latLng.lat(),
-                lng: e.latLng.lng(),
-                time: new Date(),
-            },
-        ]);
-    }, []);
+    const handleClick = (id) => {
+        history.push(`/listings/${id}`)
+    };
 
     const mapRef = useRef();
     const onMapLoad = useCallback((map) => {
         mapRef.current = map;
-    }, []);
-
-    const panTo = useCallback(({ lat, lng }) => {
-        mapRef.current.panTo({ lat, lng });
-        mapRef.current.setZoom(14);
     }, []);
 
     if (loadError) return "Error";
@@ -59,20 +45,28 @@ const GoogleMaps = () =>  {
             <GoogleMap 
                 id="map"
                 mapContainerStyle={mapContainerStyle}
-                zoom={13}
+                zoom={12}
                 center={center}
                 options={options}
-                // onClick={onMapClick}
                 onLoad={onMapLoad}
             >
-            {/* {map here} */}
-            <Marker 
-                position={{ lat: 47.64339, lng: -122.32582 }}
-                // icon={{}}
-                animation="drop"
-                clickable={true}
-                text="test"
-            />
+            {listings.map(listing => (
+                <Marker 
+                    key={listing.id}
+                    position={{ lat: listing.latitude, lng: listing.longitude}}
+                    label={{color: 'white', fontWeight: '600', fontSize: '14px', text: `$${listing.price}` }}
+                    icon={{
+                        url: CustomMarker,
+                        scaledSize: new window.google.maps.Size(42, 35),
+                        labelOrigin: new window.google.maps.Point(21, 13),
+                        anchor: new window.google.maps.Point(15, 15)
+                    }}
+                    animation={window.google.maps.Animation.DROP}
+                    clickable={true}
+                    text="test"
+                    onClick={() => handleClick(listing.id)}
+                />
+            ))}
             </GoogleMap>
         </div>
     )

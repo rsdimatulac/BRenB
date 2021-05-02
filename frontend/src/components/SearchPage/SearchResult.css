@@ -37,6 +37,8 @@
     padding-top: 2px;
     font-size: 18px;
     font-weight: 400;
+    padding-right: 30px;
+    line-height: 22px;
 }
 
 .search__result-top > p {

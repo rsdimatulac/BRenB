@@ -17,7 +17,6 @@ const Search = () => {
         dispatch(getListings());
     }, [dispatch, setShowMenu]);
 
-    console.log("LISTINGSSS", listings);
     return (
         <div className="search__container">
             <div className="search__listings-container">
@@ -40,7 +39,7 @@ const Search = () => {
                 ))}
             </div>
             <div className="google__maps-container">
-                <GoogleMaps />
+                <GoogleMaps listings={Array.from(listings)}/>
             </div>
         </div>
     )
