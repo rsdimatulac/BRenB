@@ -127,12 +127,12 @@
 .menu__dropdown-container {
     background-color: white;
     height: 240px;
-    width: 240px;
+    width: 220px;
     position: absolute;
     top: 90px;
     right: 80px;
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 12px;
     box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.10);
     animation: growDown 300ms ease-in-out forwards;
     transform-origin: top center;
@@ -161,7 +161,7 @@
     font-size: 16px;
     outline-width: 0;
     cursor: pointer;
-    padding-left: 10px;
+    /* padding-left: 10px; */
 }
 
 .dropdown__list li {
@@ -174,7 +174,7 @@
 
 .dropdown__list li > a, .dropdown__list li > p {
     text-decoration: none;
-    padding-left: 10px;
+    /* padding-left: 10px; */
     color: black;
 }
 
