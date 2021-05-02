@@ -15,12 +15,13 @@ router.get('/users/:id(\\d+)/bookings', asyncHandler(async (req, res) => {
                 model: Listing,
                 include: {
                     model: Image,
-                    attributes: ["id", "url"]
+                    attributes: ["id", "url"],
                 },
             },
         ],
         order: [
-            ["check_in", "ASC"]
+            ["check_in", "ASC"],
+            [Listing, Image, "id", "ASC"]
         ]
     });
     return res.json(bookings);

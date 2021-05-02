@@ -28,6 +28,10 @@ const HomePage = () => {
   const image2 = listings[1]?.Images[0].url;
   const image3 = listings[2]?.Images[0].url;
   const image4 = listings[3]?.Images[0].url;
+  // const image1 = "https://brenb.s3.amazonaws.com/listings/1-img-1.webp";
+  // const image2 = "https://brenb.s3.amazonaws.com/listings/2-img-1.webp";
+  // const image3 = "https://brenb.s3.amazonaws.com/listings/3-img-1.webp";
+  // const image4 = "https://brenb.s3.amazonaws.com/listings/4-img-1.webp";
 
   useEffect(() => {
     setShowMenu(false);

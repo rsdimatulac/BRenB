@@ -18,7 +18,6 @@ const Profile = () => {
     const joinedDate = format(parseISO(sessionUser?.createdAt), "yyyy");
     const dispatch = useDispatch();
     const bookings = useSelector(state => state.booking);
-
     const [bookingsLength, setBookingsLength] = useState(bookings?.length);
     
     useEffect(() => {

@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { RiStarSFill as Star } from "react-icons/ri";
 import { parseISO, format, differenceInCalendarDays } from "date-fns";
@@ -24,8 +24,7 @@ const BookingResult = ({ booking }) => {
     const rating = booking?.Listing.rating;
     const price = booking?.Listing.price;
 
-    // TODO: Fix the image order
-    const listingImage = booking?.Listing.Images[1].url;
+    const listingImage = booking?.Listing.Images[0].url;
     const listingId = booking.Listing.id;
 
     // GET REVIEWS

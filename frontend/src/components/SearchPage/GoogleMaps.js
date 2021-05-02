@@ -1,6 +1,6 @@
 import { useCallback, useRef } from "react";
 import { useHistory } from "react-router-dom";
-import { GoogleMap, useLoadScript, Marker, InfoWindow } from "@react-google-maps/api";
+import { GoogleMap, useLoadScript, Marker} from "@react-google-maps/api";
 import CustomMarker from "../../images/marker.png";
 
 const libraries = ["places"];

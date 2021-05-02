@@ -10,7 +10,11 @@ router.get('/', asyncHandler(async (req, res) => {
     // const listings = await Listing.findAll({
     //  startDate, endDate
     // });
-    const listings = await Listing.findAll({ include: [Image, User] });
+    const listings = await Listing.findAll(
+        { 
+            include: [Image, User],
+            order: [[Image, "id", "ASC"]]
+        });
     return res.json(listings);
 }));
 

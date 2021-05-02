@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import SignUp from "../SignupFormModal/SignupFormModal";
 import useConsumeContext from "../../context/LoginSignupModalContext";
 import './LoginForm.css';
 
