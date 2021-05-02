@@ -14,7 +14,7 @@ import "./Navbar.css"; // styling both NavBar and Dropdown Menu
 const Navbar = ({ isLoaded }) => {
     const [dark, setDark] = useState('dark');
     const [logo, setLogo] = useState(LogoBNW);
-    const [showDatePicker, setShowDatePicker] = useState(false);
+    // const [showDatePicker, setShowDatePicker] = useState(false);
     const { showMenu, setShowMenu, setShowLogin, setShowSignUp } = useConsumeContext();
     const history = useHistory();
 
