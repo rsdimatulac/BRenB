@@ -17,7 +17,6 @@ const Navbar = ({ isLoaded }) => {
     // const [showDatePicker, setShowDatePicker] = useState(false);
     const { showMenu, setShowMenu, setShowLogin, setShowSignUp } = useConsumeContext();
     const history = useHistory();
-    console.log("PATHHH", window.location.pathname)
     
     // what triggers the navbar style change
     window.onscroll = function () {

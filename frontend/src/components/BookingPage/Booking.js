@@ -28,8 +28,8 @@ const Booking = () => {
     const endDate = format(booking.check_out, "MMM dd, yyyy");
     const num_nights = differenceInCalendarDays(booking.check_out, booking.check_in);
     let price = (listing?.price * num_nights);
-    const cleaning = 27.00;
-    const service = 16.94;
+    const cleaning = 27;
+    const service = 19.93;
     const taxes = ((price + cleaning + service) * 0.13).toLocaleString(undefined, { maximumFractionDigits: 2 });
     const total = (price + cleaning + service + parseFloat(taxes)).toLocaleString(undefined, { maximumFractionDigits: 2 });
     

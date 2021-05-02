@@ -45,7 +45,6 @@ router.post('/bookings', asyncHandler(async (req, res) => {
 // DELETE /api/bookings/:id
 router.delete('/bookings/:id(\\d+)', asyncHandler(async (req, res) => {
     const bookingId = parseInt(req.params.id, 10);
-    console.log("BACKEND", bookingId)
     const booking = await Booking.findByPk(bookingId);
     await booking.destroy();
 

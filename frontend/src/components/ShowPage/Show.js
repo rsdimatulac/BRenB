@@ -65,7 +65,7 @@ const ShowPage = () => {
                 </div>
                 <div className="listing__features">
                     <div className="description__info">
-                        <h1>{`${listing?.type} by ${host?.firstName}`}</h1>
+                        <h1>{`${listing?.type} hosted by ${host?.firstName}`}</h1>
                         <span>{guest > 1 ? `${guest} guests` : `${guest} guest`}</span>
                         <span>・</span>
                         <span>{bed > 1 ? `${bed} beds` : `${bed} bed`}</span>
