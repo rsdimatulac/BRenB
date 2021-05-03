@@ -1,5 +1,5 @@
 // import { useSelector } from "react-redux";
-import { GrFavorite as Favorite } from "react-icons/gr";
+// import { GrFavorite as Favorite } from "react-icons/gr";
 import { RiStarSFill as Star } from "react-icons/ri";
 import "./SearchResult.css";
 
