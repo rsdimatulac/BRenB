@@ -127,3 +127,41 @@
     padding-left: 3px;
 }
 
+/* MODAL CANCEL BOOKING */
+
+#modal__cancel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal__cancel-background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#modal__cancel-content {
+    height: 150px;
+    width: 460px;
+    border-radius: 20px;
+    position: absolute;
+    background-color: white;
+    padding-left: 35px;
+}
+
+#modal__cancel-message {
+    padding-top: 35px;
+}
+
+#modal__cancel-message div {
+    padding-bottom: 20px;
+}
