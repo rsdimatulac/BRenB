@@ -1,8 +1,10 @@
 import { useDispatch } from "react-redux";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { RiStarSFill as Star } from "react-icons/ri";
 import { parseISO, format, differenceInCalendarDays } from "date-fns";
 import { cancelBooking } from "../../store/booking";
+import { GrClose as Close } from "react-icons/gr";
 import "./BookingResult.css";
 
 
@@ -23,9 +25,9 @@ const BookingResult = ({ booking }) => {
     const num_baths = booking?.Listing.num_baths;
     const rating = booking?.Listing.rating;
     const price = booking?.Listing.price;
-
     const listingImage = booking?.Listing.Images[0].url;
     const listingId = booking.Listing.id;
+    const [showCancelModal, setShowCancelModal] = useState(false);
 
     // GET REVIEWS
 
@@ -49,7 +51,19 @@ const BookingResult = ({ booking }) => {
                         <span>{booking_guests > 1 ? `${booking_guests} guests` : `${booking_guests} guest`}</span>
                     </h4>
                 </div>
-                <button onClick={handleClick}>Cancel booking</button>
+                <button onClick={() => setShowCancelModal(prevState => !prevState)}>Cancel booking</button>
+                {showCancelModal && (
+                    <div id="modal__cancel">
+                        <div id="modal__cancel-background" />
+                        <div id="modal__cancel-content">
+                            <div id="modal__close-button"><Close onClick={() => setShowCancelModal(prevState => !prevState)} id="close__button" /></div>
+                            <div id="modal__cancel-message">
+                                <div>Are you sure you want to cancel?</div>
+                                <button onClick={handleClick}>Cancel booking</button>
+                            </div>
+                        </div>
+                    </div>
+                )}
                 <p>Total cost: ${total}</p>
             </div>
             <div className="booking__tile-bottom">
@@ -70,7 +84,7 @@ const BookingResult = ({ booking }) => {
                         </h4>
                         <div className="booking__trips-bottom">
                             <div>
-                                <span><Star className="star__icon-booking"/></span>
+                                <span><Star className="star__icon-booking" /></span>
                                 <span>{rating}</span>
                                 {/* <span>{reviews?.length > 1 ? `(${reviews?.length} reviews)` : `(${reviews?.length} review)`}</span> */}
                             </div>
