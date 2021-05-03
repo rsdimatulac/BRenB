@@ -4,8 +4,11 @@
 
 _[BRenB](https://brenb.herokuapp.com/)_, an [Airbnb](https://airbnb.com/) clone, is a single page application that allows users to host and rent homes. Users can view browse, create, and cancel bookings on their profile page.
 
+### Home and Search View
+![Home and Search View](frontend/public/home-search.gif)
 
-
+### Booking and Profile View
+![Booking and Profile View](frontend/public/booking-profile.gif)
 
 ## Prerequisites
 Before you begin, please check the follwing Wiki documents:
