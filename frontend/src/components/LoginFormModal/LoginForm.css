@@ -72,4 +72,5 @@ input::placeholder {
 
 .signup__link {
     font-size: 14px;
+    cursor: pointer;
 }

@@ -79,4 +79,5 @@ input::placeholder {
 
 .login__link {
     font-size: 14px;
+    cursor: pointer;
 }

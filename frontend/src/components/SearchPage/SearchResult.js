@@ -18,7 +18,7 @@ const SearchResult = ({ listing }) => {
     return (
         <div className="search__result-container">
             <img src={image} alt=""></img>
-            <Favorite className="favorite__icon"/>
+            {/* <Favorite className="favorite__icon"/> */}
             <div className="search__result-info">
                 <div className="search__result-top">
                     <p>{type} in {city}</p>
