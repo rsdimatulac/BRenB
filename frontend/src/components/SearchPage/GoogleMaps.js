@@ -63,7 +63,6 @@ const GoogleMaps = ({ listings }) =>  {
                     }}
                     animation={window.google.maps.Animation.DROP}
                     clickable={true}
-                    text="test"
                     onClick={() => handleClick(listing.id)}
                 />
             ))}

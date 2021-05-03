@@ -1,5 +1,5 @@
 import { NavLink, useHistory } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { GoSearch as SearchIcon } from "react-icons/go";
 import { MdLanguage as LanguageIcon } from "react-icons/md";
@@ -19,15 +19,19 @@ const Navbar = ({ isLoaded }) => {
     const history = useHistory();
     
     // what triggers the navbar style change
-    window.onscroll = function () {
-        if (window.pageYOffset > 0) {
-            setLogo(Logo);
-            setDark("");
-        } else if (window.pageYOffset === 0) {
-            setLogo(LogoBNW);
-            setDark("dark");
+    useEffect(() => {
+        const scrollFunction = function () {
+            if (window.pageYOffset > 0) {
+                setLogo(Logo);
+                setDark("");
+            } else if (window.pageYOffset === 0) {
+                setLogo(LogoBNW);
+                setDark("dark");
+            }
         };
-    };
+        window.addEventListener('scroll', scrollFunction);
+        return () => window.removeEventListener('scroll', scrollFunction);
+    }, []);
 
     const handleClick = () => {
         history.push("/search");
