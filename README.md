@@ -63,20 +63,24 @@ router.get('/users/:id(\\d+)/bookings', asyncHandler(async (req, res) => {
 }));
 ```
 
-- This function triggers the theme change of the Navbar when scroll event happens.
+- This function triggers the theme change of the Navbar when scroll event occurs. It is wrapped in a `useEffect` returning a clean up function that removes the listener to prevent memory leak.
 ``` js
-window.onscroll = function () {
+useEffect(() => {
+    const scrollFunction = function () {
         if (window.pageYOffset > 0) {
             setLogo(Logo);
             setDark("");
         } else if (window.pageYOffset === 0) {
             setLogo(LogoBNW);
             setDark("dark");
-        };
+        }
     };
+    window.addEventListener('scroll', scrollFunction);
+    return () => window.removeEventListener('scroll', scrollFunction);
+}, []);
 ```
 
-- Renders each  markers on the Google Maps that are linked on the listing id.
+- Renders each markers on the Google Maps, taking in latitude and longitude coordinates, that are linked on the listing id.
 
 ``` js
 {listings.map(listing => (
@@ -92,7 +96,6 @@ window.onscroll = function () {
         }}
         animation={window.google.maps.Animation.DROP}
         clickable={true}
-        text="test"
         onClick={() => handleClick(listing.id)}
     />
 ))}
