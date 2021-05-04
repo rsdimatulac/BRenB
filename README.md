@@ -11,7 +11,7 @@ _[BRenB](https://brenb.herokuapp.com/)_, an [Airbnb](https://airbnb.com/) clone,
 ![Booking and Profile View](frontend/public/booking-profile.gif)
 
 ## Prerequisites
-Before you begin, please check the follwing Wiki documents:
+Before you begin, please check the following Wiki documents:
 * [MVP List](https://github.com/rsdimatulac/BRenB/wiki/MVP-List)
 * [Database Schema](https://github.com/rsdimatulac/BRenB/wiki/Database-Schema)
 * [API Routes](https://github.com/rsdimatulac/BRenB/wiki/API-Routes)
