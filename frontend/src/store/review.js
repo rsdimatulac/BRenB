@@ -1,13 +1,19 @@
 import { csrfFetch } from './csrf';
 
-const LOAD = 'review/LOAD';
+const LOAD_REVIEWS = 'review/LOAD';
+const ADD_REVIEW = 'review/ADD';
 
 /////////////////// ACTION CREATORS ////////////////////
 
 const loadReviews = reviews => ({
-    type: LOAD,
+    type: LOAD_REVIEWS,
     reviews
 });
+
+const addReview = review => ({
+    type: ADD_REVIEW,
+    review
+})
 
 //////////////// THUNK ACTION CREATORS ////////////////////
 
@@ -21,17 +27,17 @@ export const getReviews = (listingId) => async (dispatch) => {
     };
 }
 
+export const createReview = review => async (dispatch) => {
+    // Add logic to post new review
+}
+
 /////////////////////// REDUCER //////////////////////////
 
 const initialState = {};
 
 const reviewReducer = (state = initialState, action) => {
     switch (action.type) {
-        case LOAD:
-            // const allReviews ={};
-            // action.reviews.forEach(review => {
-            //     allReviews[review.id] = review
-            // })
+        case LOAD_REVIEWS:
             return action.reviews;
         default:
             return state;
