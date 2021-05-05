@@ -15,5 +15,10 @@ router.get('/listings/:id(\\d+)/reviews', asyncHandler(async (req, res) => {
     return res.json(reviews);
 }));
 
+// POST /api/listings/:id/reviews
+router.post('/listings/:id(\\d+)/reviews', asyncHandler(async (req, res) => {
+    // Add logic to post new reviews
+}));
+
 
 module.exports = router;
