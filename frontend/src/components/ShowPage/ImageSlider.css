@@ -6,15 +6,17 @@
 }
 
 .image {
-    width: 1160px;
+    width: 100%;
+    /* width: 1160px; */
     object-fit: contain;
     text-align: center;
+    border-radius: 20px;
 }
 
 .right__arrow {
     position: absolute;
     top: 55%;
-    right: -20px;
+    right: 0px;
     font-size: 3rem;
     color: rgb(255, 255, 255);
     z-index: 10;
@@ -26,7 +28,7 @@
 .left__arrow {
     position: absolute;
     top: 55%;
-    left: -20px;
+    left: 0px;
     font-size: 3rem;
     color: white;
     z-index: 10;

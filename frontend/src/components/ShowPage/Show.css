@@ -62,6 +62,7 @@ html {
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    max-width: 100%;
 }
 
 .listing__features {
@@ -102,6 +103,8 @@ html {
     top: 120px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    max-width: 340px;
 }
 
 .listing__more-info__container {
