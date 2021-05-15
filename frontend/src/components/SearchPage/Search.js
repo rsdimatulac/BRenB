@@ -10,7 +10,32 @@ import SearchResult from "./SearchResult";
 const Search = () => {
     const { setShowMenu } = useConsumeContext();
     const dispatch = useDispatch();
-    const listings = useSelector(state => state.listing);
+    let listings = useSelector(state => state.listing);
+
+    // How to show listing by category
+    if (window.location.pathname.includes("mercer_island") || window.location.pathname.includes("bellevue")) {
+        console.log("mercer_island or bellevue");
+        listings = [];
+    } else if (window.location.pathname.includes("north_seattle")) {
+        console.log("north_seattle")
+    } else if (window.location.pathname.includes("downtown")) {
+        console.log("downtown")
+    } else if (window.location.pathname.includes("uptown")) {
+        console.log("uptown")
+    } else if (window.location.pathname.includes("greenlake")) {
+        console.log("greenlake")
+    } else if (window.location.pathname.includes("slu")) {
+        console.log("slu")
+    } else if (window.location.pathname.includes("belltown")) {
+        console.log("belltown")
+    } else if (window.location.pathname.includes("unique_stays")) {
+        console.log("unique_stays")
+    } else if (window.location.pathname.includes("outdoor_getaways")) {
+        console.log("outdoors")
+    }
+    else {
+        console.log("show all search")
+    }
 
     useEffect(() => {
         setShowMenu(false);
@@ -32,11 +57,15 @@ const Search = () => {
                     <button><p>Price</p></button>
                     <button><p>More filters</p></button>
                 </div>
-                {Array.from(listings)?.map(listing => (
+                {listings?.length !== 0 ? Array.from(listings)?.map(listing => (
                     <NavLink to={`/listings/${listing?.id}`} style={{ textDecoration: "none" }} key={listing?.id}>
                         <SearchResult listing={listing} />
                     </NavLink>
-                ))}
+                )) : <div className="no__stays">
+                        <h4>No results</h4>
+                        <p>To get more results, try adjusting your search by area.</p>
+                    </div>
+                }
             </div>
             <div className="google__maps-container">
                 <GoogleMaps listings={Array.from(listings)}/>

@@ -34,6 +34,7 @@
     font-size: 14px;
     color: #222222;
     height: 36px;
+    cursor: not-allowed;
 }
 
 .search__listings-info > button p {
@@ -42,6 +43,22 @@
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+.no__stays {
+    line-height: 26px;
+}
+
+.no__stays h4 {
+    padding-top: 32px;
+    font-size: 22px;
+    color: #222222;
+    font-weight: 600; 
+}
+
+.no__stays p {
+    font-size: 16px;
+    color: #222222;
 }
 
 .google__maps-container > div {

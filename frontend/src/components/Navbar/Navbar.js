@@ -66,9 +66,9 @@ const Navbar = ({ isLoaded }) => {
                 {/* {showDatePicker && <DatePicker />} */}
             </div>
             {dark === "dark" && <div className={`navbar__info ${dark}`}>
-                <span>Places to stay</span>
-                <span>Experiences</span>
-                <span>Online Experiences</span>
+                <span><a href="#explore_nearby">Explore Nearby</a></span>
+                <span><a href="#live_anywhere">Live Anywhere</a></span>
+                <span><a href="#featured_homes">Featured Homes</a></span>
             </div>}
             <div className={`navbar__buttons ${dark}`}>
                 <div className={`become-a-host ${dark}`}><p>Become a host</p></div>

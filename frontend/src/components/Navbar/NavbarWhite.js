@@ -40,7 +40,10 @@ const NavbarWhite = ({ isLoaded }) => {
             {window.location.pathname !== "/bookings" &&
                 <div className={`navbar__search`} onClick={handleClick}>
                     {/* <div className={`navbar__search`} onClick={() => setShowDatePicker(!showDatePicker)}> */}
-                    <div className="navbar__search-title">Start your search</div>
+                    <div className="navbar__search-title">
+                        {/* TODO: Add logic to dynamically change this text by category of search */}
+                        Start your search
+                    </div>
                     <SearchIcon onClick={handleClick} className="search-icon" />
                     {/* <SearchIcon onClick={() => setShowDatePicker(!showDatePicker)} className="search-icon" /> */}
                     {/* {showDatePicker && <DatePicker />} */}
