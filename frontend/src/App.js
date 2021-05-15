@@ -43,7 +43,11 @@ function App() {
               <BookingPage />
               <Footer />
             </Route>
-            <Route path="/search">
+            <Route exact path="/search">
+              <NavbarWhite isLoaded={isLoaded} />
+              <SearchPage />
+            </Route>
+            <Route path="/search/:category">
               <NavbarWhite isLoaded={isLoaded} />
               <SearchPage />
             </Route>

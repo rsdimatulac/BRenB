@@ -9,9 +9,17 @@
 .tile__container {
     display: flex;
     padding: 20px 80px 10px 80px; 
+    position: relative;
 }
 
 .tile__title {
     font-size: 32px;
     padding: 40px 90px 0px 90px;
+}
+
+
+/* A DIV THAT IS HIDDEN */
+#live_anywhere {
+    position: absolute;
+    top: -150px;
 }

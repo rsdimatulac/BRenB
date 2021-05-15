@@ -8,7 +8,7 @@ function Banner() {
             <div className="banner__image">
                 <img src={BannerImage} alt="Cabin in the woods" />
             </div>
-            <div className="banner__message">
+            <div id="explore_nearby" className="banner__message">
                 <p>Made possible by Hosts</p>
             </div>
         </div>

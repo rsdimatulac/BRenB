@@ -5,14 +5,14 @@ import EntireHomes from "../../images/homepage/entire-homes.webp";
 import UniqueStays from "../../images/homepage/unique-stays.webp";
 import Outdoor from "../../images/homepage/farms-and-nature.webp";
 import PetsAllowed from "../../images/homepage/pets-allowed.webp";
-import Bainbridge from "../../images/homepage/explore-1.webp";
+import Bellevue from "../../images/homepage/explore-1.webp";
 import Seattle from "../../images/homepage/explore-2.webp";
 import Mercer from "../../images/homepage/explore-3.webp";
-import Portland from "../../images/homepage/explore-4.webp";
-import Victoria from "../../images/homepage/explore-5.webp";
-import Tacoma from "../../images/homepage/explore-6.webp";
-import Vancouver from "../../images/homepage/explore-7.webp";
-import Orcas from "../../images/homepage/explore-3.webp";
+import NorthSeattle from "../../images/homepage/explore-4.webp";
+import Greenlake from "../../images/homepage/explore-5.webp";
+import SLU from "../../images/homepage/explore-6.webp";
+import Uptown from "../../images/homepage/explore-7.webp";
+import Belltown from "../../images/homepage/explore-3.webp";
 import { getListings } from "../../store/listing";
 import useConsumeContext from "../../context/LoginSignupModalContext";
 import Banner from './Banner';
@@ -43,69 +43,94 @@ const HomePage = () => {
       <Banner />
       <h1 className="tile__title">Explore Nearby</h1>
       <div className='city__container'>
-        <City 
-          src={Mercer}
-          title="Mercer Island"
-          description="11 minute drive"
-        />
-        <City
-          src={Portland}
-          title="Portland"
-          description="3 hour drive"
-        />
-        <City
-          src={Seattle}
-          title="Seattle"
-          description="5 minute drive"
-        />
-        <City
-          src={Bainbridge}
-          title="Bainbridge Island"
-          description="1 hour drive"
-        />
-        <City
-          src={Vancouver}
-          title="Vancouver"
-          description="2.5 hour drive"
-        />
-        <City
-          src={Victoria}
-          title="Victoria"
-          description="4.5 hour drive"
-        />
-        <City
-          src={Tacoma}
-          title="Tacoma"
-          description="35 minute drive"
-        />
-        <City
-          src={Orcas}
-          title="Orcas Island"
-          description="3 hour drive"
-        />
+        <NavLink to={`/search/mercer_island`} style={{ textDecoration: "none", color: "inherit" }}>
+          <City 
+            src={Mercer}
+            title="Mercer Island"
+            description="11 minute drive"
+            />
+        </NavLink>
+        <NavLink to={`/search/north_seattle`} style={{ textDecoration: "none", color: "inherit" }}>
+          <City
+            src={NorthSeattle}
+            title="North Seattle"
+            description="18 minute drive"
+          />
+        </NavLink>
+        <NavLink to={`/search/downtown`} style={{ textDecoration: "none", color: "inherit" }}>
+          <City
+            src={Seattle}
+            title="Seattle"
+            description="3 minute drive"
+            />
+        </NavLink>
+        <NavLink to={`/search/bellevue`} style={{ textDecoration: "none", color: "inherit" }}>
+          <City
+            src={Bellevue}
+            title="Bellevue"
+            description="14 minute drive"
+            />
+        </NavLink>
+        <NavLink to={`/search/uptown`} style={{ textDecoration: "none", color: "inherit" }}>
+          <City
+            src={Uptown}
+            title="Uptown"
+            description="8 minute drive"
+            />
+        </NavLink>
+        <NavLink to={`/search/greenlake`} style={{ textDecoration: "none", color: "inherit" }}>
+          <City
+            src={Greenlake}
+            title="Green Lake"
+            description="13 minute drive"
+            />
+        </NavLink>
+        <NavLink to={`/search/slu`} style={{ textDecoration: "none", color: "inherit" }}>
+          <City
+            src={SLU}
+            title="South Lake Union"
+            description="7 minute drive"
+            />
+        </NavLink>
+        <NavLink to={`/search/belltown`} style={{ textDecoration: "none", color: "inherit" }}>
+          <City
+            src={Belltown}
+            title="Belltown"
+            description="6 minute drive"
+          />
+        </NavLink>
       </div>
       <h1 className="tile__title">Live Anywhere</h1>
       <div className='tile__container'>
-        <Tile
-          src={EntireHomes}
-          title="Entire homes"
-        />
-        <Tile
-          src={UniqueStays}
-          title="Unique stays"
-        />
-        <Tile
-          src={Outdoor}
-          title="Outdoor getaways"
-        />
-        <Tile
-          src={PetsAllowed}
-          title="Pets allowed"
-        />
+        <div id="live_anywhere"></div>
+        <NavLink to={`/search`} style={{ textDecoration: "none", color: "inherit" }}>
+          <Tile
+            src={EntireHomes}
+            title="Entire homes"
+            />
+        </NavLink>
+        <NavLink to={`/search/unique_stays`} style={{ textDecoration: "none", color: "inherit" }}>
+          <Tile
+            src={UniqueStays}
+            title="Unique stays"
+            />
+        </NavLink>
+        <NavLink to={`/search/outdoor_getaways`} style={{ textDecoration: "none", color: "inherit" }}>
+          <Tile
+            src={Outdoor}
+            title="Outdoor getaways"
+            />
+        </NavLink>
+        <NavLink to={`/search`} style={{ textDecoration: "none", color: "inherit" }}>
+          <Tile
+            src={PetsAllowed}
+            title="Pets allowed"
+            />
+        </NavLink>
       </div>
       <h1 className="tile__title">Featured Homes</h1>
-      <div className='tile__container'>
-        <NavLink to={`/listings/${listings[1]?.id}`} style={{ textDecoration: "none"}}>
+      <div id="featured_homes" className='tile__container'>
+        <NavLink to={`/listings/${listings[1]?.id}`} style={{ textDecoration: "none" }}>
           <Tile
             src={image2}
             title={listings[1]?.title}
