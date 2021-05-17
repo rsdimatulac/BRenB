@@ -129,7 +129,8 @@ const HomePage = () => {
         </NavLink>
       </div>
       <h1 className="tile__title">Featured Homes</h1>
-      <div id="featured_homes" className='tile__container'>
+      <div className='tile__container'>
+        <div id="featured_homes"></div>
         <NavLink to={`/listings/${listings[1]?.id}`} style={{ textDecoration: "none" }}>
           <Tile
             src={image2}
