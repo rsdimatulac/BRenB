@@ -244,7 +244,7 @@ module.exports = {
         rating: 5.0
       },
       { // 17
-        title: 'City water view Oasis in the heart of Seattlt',
+        title: 'City water view Oasis in the heart of Seattle',
         description: 'Enjoy the sunset while tasting wine and watching ferries go by on Puget Sound from your private balcony. You are close to everything while staying here. Let the heart of Seattle embrace you for what it can delightfully offer. Most of all, kick back and relax, enjoy the views, and have a great time!',
         type: 'Entire condominium',
         host_id: 18, // Reshma Saujani

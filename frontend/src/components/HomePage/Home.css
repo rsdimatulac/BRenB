@@ -19,7 +19,7 @@
 
 
 /* A DIV THAT IS HIDDEN */
-#live_anywhere {
+#live_anywhere, #featured_homes {
     position: absolute;
     top: -150px;
 }
