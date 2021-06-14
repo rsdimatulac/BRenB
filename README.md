@@ -2,7 +2,7 @@
 
 ### **Live Link: [BRenB](https://brenb.herokuapp.com/)**
 
-_[BRenB](https://brenb.herokuapp.com/)_, a pixel perfect [Airbnb](https://airbnb.com/) clone, is a single page application that allows users to host and rent homes. Users can view browse, create, and cancel bookings on their profile page.
+_[BRenB](https://brenb.herokuapp.com/)_, a pixel perfect [Airbnb](https://airbnb.com/) clone, is a single page application that allows users to browse and rent homes. Users can view browse, create, and cancel bookings on their profile page.
 
 ### Home and Search View
 ![Home and Search View](frontend/public/home-search.gif)
